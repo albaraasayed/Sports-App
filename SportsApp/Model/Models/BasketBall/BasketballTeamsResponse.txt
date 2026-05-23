@@ -1,0 +1,14 @@
+import Foundation
+
+// MARK: - Root Response
+struct BasketballTeamsResponse: Codable {
+    let success: Int
+    let result: [BasketballTeam]?
+}
+
+// MARK: - Team Model
+struct BasketballTeam: Codable {
+    let team_key: String?
+    let team_name: String?
+    let team_logo: String?
+}
