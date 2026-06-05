@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1055 685">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #150000;
+        stroke-miterlimit: 40;
+        stroke-width: 5px;
+      }
+
+      .cls-2 {
+        fill: #150000;
+      }
+    </style>
+  </defs>
+  <path id="Border" class="cls-1" d="M1052.5,2.5v680H2.5V2.5h1050Z"/>
+  <path id="Centre_line" data-name="Centre line" class="cls-1" d="M527.5,2.5v680"/>
+  <circle id="Centre_circle" data-name="Centre circle" class="cls-1" cx="527.5" cy="342.5" r="91.5"/>
+  <circle id="Centre_mark" data-name="Centre mark" class="cls-2" cx="527.5" cy="342.5" r="7.5"/>
+  <g id="Penalty_area" data-name="Penalty area">
+    <path id="Penalty_area_line" data-name="Penalty area line" class="cls-1" d="M1052.5,140.9h-165v403.2h165"/>
+    <path id="Goal_area_line" data-name="Goal area line" class="cls-1" d="M1052.5,250.9h-55v183.2h55"/>
+    <path id="Penalty_arc" data-name="Penalty arc" class="cls-1" d="M887.5,269.83c-40.13,30.71-47.78,88.14-17.07,128.27,4.91,6.42,10.65,12.16,17.07,17.07"/>
+  </g>
+  <g id="Penalty_area-2" data-name="Penalty area">
+    <path id="Penalty_area_line-2" data-name="Penalty area line" class="cls-1" d="M2.5,544.1h165V140.9H2.5"/>
+    <path id="Goal_area_line-2" data-name="Goal area line" class="cls-1" d="M2.5,434.1h55v-183.2H2.5"/>
+    <path id="Penalty_arc-2" data-name="Penalty arc" class="cls-1" d="M167.5,415.17c40.13-30.71,47.78-88.14,17.07-128.27-4.91-6.42-10.65-12.16-17.07-17.07"/>
+  </g>
+  <path id="Corner_arcs" data-name="Corner arcs" class="cls-1" d="M1032.5,2.5c0,11.05,8.95,20,20,20M1052.5,662.5c-11.05,0-20,8.95-20,20M22.5,682.5c0-11.05-8.95-20-20-20M2.5,22.5c11.05,0,20-8.95,20-20"/>
+</svg>
