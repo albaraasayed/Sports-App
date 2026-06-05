@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Manrope-SemiBold.otf">
+            <string>Manrope-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UpcomingCell" id="gTV-IL-0wX" customClass="UpcomingCell" customModule="SportsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="385" height="190"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="385" height="190"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhZ-5f-z9g">
+                        <rect key="frame" x="192.66666666666663" y="0.0" width="192.33333333333337" height="190"/>
+                        <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCo-hK-gFn">
+                        <rect key="frame" x="309" y="19" width="60" height="18"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7pm" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCi-AP-Vma">
+                                <rect key="frame" x="4" y="0.0" width="52" height="18"/>
+                                <fontDescription key="fontDescription" name="Manrope-Semibold" family="Manrope" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.83921568627450982" green="0.83529411764705885" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zCi-AP-Vma" firstAttribute="top" secondItem="RCo-hK-gFn" secondAttribute="top" id="AsU-ok-psP"/>
+                            <constraint firstAttribute="trailing" secondItem="zCi-AP-Vma" secondAttribute="trailing" constant="4" id="Fed-Q4-8Qe"/>
+                            <constraint firstItem="zCi-AP-Vma" firstAttribute="leading" secondItem="RCo-hK-gFn" secondAttribute="leading" constant="4" id="US1-JQ-30Y"/>
+                            <constraint firstAttribute="width" constant="60" id="juM-Ae-6Ra"/>
+                            <constraint firstAttribute="height" constant="18" id="n16-LB-Tmb"/>
+                            <constraint firstAttribute="bottom" secondItem="zCi-AP-Vma" secondAttribute="bottom" id="poW-AK-pqG"/>
+                        </constraints>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="LAt-Eb-TVX">
+                        <rect key="frame" x="16" y="58" width="353" height="50"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="sIf-xz-2m6">
+                                <rect key="frame" x="0.0" y="5" width="147.66666666666666" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHELSEA" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgZ-7z-4UF">
+                                        <rect key="frame" x="0.0" y="0.0" width="65.666666666666671" height="40"/>
+                                        <fontDescription key="fontDescription" name="Manrope-Semibold" family="Manrope" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chelsea" translatesAutoresizingMaskIntoConstraints="NO" id="cw4-Jf-YoO">
+                                        <rect key="frame" x="107.66666666666667" y="0.0" width="40.000000000000014" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="cw4-Jf-YoO" secondAttribute="height" multiplier="1:1" id="usL-T8-I6y"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="41L-T8-u91">
+                                <rect key="frame" x="205.66666666666663" y="1" width="147.33333333333337" height="48"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="man utd" translatesAutoresizingMaskIntoConstraints="NO" id="WbI-vn-Ngu">
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="WbI-vn-Ngu" secondAttribute="height" multiplier="1:1" id="qfY-FG-Qdx"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAN UTD" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNT-lc-tPY">
+                                        <rect key="frame" x="81.666666666666657" y="0.0" width="65.666666666666657" height="48"/>
+                                        <fontDescription key="fontDescription" name="Manrope-Semibold" family="Manrope" pointSize="14"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="VEZ-dw-hXQ"/>
+                        </constraints>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YyB-pm-HBa">
+                        <rect key="frame" x="0.0" y="135" width="385" height="55"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="8i8-Bd-4uW">
+                                <rect key="frame" x="16" y="9.6666666666666572" width="353" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAYOFFS- ROUND 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAf-XR-P5b">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="19.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="Manrope-Semibold" family="Manrope" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best of 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrC-me-oa1">
+                                        <rect key="frame" x="0.0" y="19.333333333333343" width="353" height="16.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Manrope-Semibold" family="Manrope" pointSize="12"/>
+                                        <color key="textColor" red="0.83921568627450982" green="0.83529411764705885" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="55" id="01f-uc-tI6"/>
+                            <constraint firstItem="8i8-Bd-4uW" firstAttribute="leading" secondItem="YyB-pm-HBa" secondAttribute="leading" constant="16" id="2zH-Xh-auW"/>
+                            <constraint firstItem="8i8-Bd-4uW" firstAttribute="centerY" secondItem="YyB-pm-HBa" secondAttribute="centerY" id="5eP-S6-2hh"/>
+                            <constraint firstAttribute="trailing" secondItem="8i8-Bd-4uW" secondAttribute="trailing" constant="16" id="PcV-HO-9jd"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="premierleague" translatesAutoresizingMaskIntoConstraints="NO" id="T68-YE-jz2">
+                        <rect key="frame" x="16" y="16" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="T68-YE-jz2" secondAttribute="height" multiplier="1:1" id="0CD-GV-E3H"/>
+                            <constraint firstAttribute="height" constant="24" id="DhA-ci-o4g"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" red="0.93333333333333335" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="YyB-pm-HBa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2fI-wh-TRe"/>
+                <constraint firstAttribute="trailing" secondItem="LAt-Eb-TVX" secondAttribute="trailing" constant="16" id="9VE-8y-P5l"/>
+                <constraint firstItem="jhZ-5f-z9g" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="A4e-yd-aCf"/>
+                <constraint firstAttribute="trailing" secondItem="RCo-hK-gFn" secondAttribute="trailing" constant="16" id="Axc-d7-arI"/>
+                <constraint firstItem="T68-YE-jz2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="G5L-KW-G44"/>
+                <constraint firstAttribute="bottom" secondItem="YyB-pm-HBa" secondAttribute="bottom" id="Wc5-uc-nJb"/>
+                <constraint firstItem="LAt-Eb-TVX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="kUq-36-W5v"/>
+                <constraint firstItem="RCo-hK-gFn" firstAttribute="centerY" secondItem="T68-YE-jz2" secondAttribute="centerY" id="lbv-Ma-1dx"/>
+                <constraint firstAttribute="bottom" secondItem="jhZ-5f-z9g" secondAttribute="bottom" id="neA-OR-J5U"/>
+                <constraint firstAttribute="trailing" secondItem="jhZ-5f-z9g" secondAttribute="trailing" id="s4V-ce-Sde"/>
+                <constraint firstAttribute="trailing" secondItem="YyB-pm-HBa" secondAttribute="trailing" id="wA8-JI-FNH"/>
+                <constraint firstItem="jhZ-5f-z9g" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.5" id="wO7-do-ajs"/>
+                <constraint firstItem="T68-YE-jz2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="wvS-X1-hD8"/>
+                <constraint firstItem="LAt-Eb-TVX" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-12" id="zAn-DJ-9MC"/>
+            </constraints>
+            <connections>
+                <outlet property="date" destination="nrC-me-oa1" id="3VR-gy-i4d"/>
+                <outlet property="greyBackgroundView" destination="jhZ-5f-z9g" id="Igd-Bx-pNu"/>
+                <outlet property="leagueImage" destination="T68-YE-jz2" id="PMM-Zp-rHD"/>
+                <outlet property="leagueRound" destination="TAf-XR-P5b" id="oIL-rj-uFA"/>
+                <outlet property="team1Image" destination="WbI-vn-Ngu" id="Nej-QZ-0ju"/>
+                <outlet property="team1Label" destination="fNT-lc-tPY" id="9bF-PK-3bd"/>
+                <outlet property="team2Image" destination="cw4-Jf-YoO" id="wVh-1q-Giu"/>
+                <outlet property="team2Label" destination="RgZ-7z-4UF" id="G1l-c4-ogK"/>
+                <outlet property="time" destination="zCi-AP-Vma" id="QnW-9g-HPz"/>
+            </connections>
+            <point key="canvasLocation" x="138.93129770992365" y="153.52112676056339"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="chelsea" width="40" height="40"/>
+        <image name="man utd" width="48" height="48"/>
+        <image name="premierleague" width="1024" height="1024"/>
+    </resources>
+</document>

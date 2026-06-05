@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wcA-cY-Dxj">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Manrope-Regular.otf">
+            <string>Manrope-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="keep an eye on the stadium" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaO-2t-hi9">
+                                <rect key="frame" x="18" y="560.33333333333337" width="378" height="153.66666666666663"/>
+                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="64"/>
+                                <color key="textColor" name="TextPrimary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sit-uH-c7z">
+                                <rect key="frame" x="18" y="810" width="378" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="3Pe-Gx-22Z"/>
+                                </constraints>
+                                <color key="tintColor" name="Primary"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start">
+                                    <fontDescription key="titleFontDescription" name="BebasNeue" family="Bebas Neue" pointSize="24"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapStartButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="fjm-cb-k73"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watch sports live or highlights, read every news from your smartphone" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M64-wC-Cks">
+                                <rect key="frame" x="18" y="714" width="378" height="44"/>
+                                <fontDescription key="fontDescription" name="Manrope-Regular" family="Manrope" pointSize="16"/>
+                                <color key="textColor" name="TextSecondary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start" translatesAutoresizingMaskIntoConstraints="NO" id="xMl-gc-jFS">
+                                <rect key="frame" x="0.0" y="60" width="414" height="530"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="AppBackground"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Sit-uH-c7z" secondAttribute="bottom" constant="38" id="3eV-2n-dMq"/>
+                            <constraint firstItem="vaO-2t-hi9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="6sp-wq-5Fp"/>
+                            <constraint firstItem="M64-wC-Cks" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="6wV-dW-APs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xMl-gc-jFS" secondAttribute="trailing" id="99o-WU-vGM"/>
+                            <constraint firstItem="Sit-uH-c7z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="9bE-7H-ct0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sit-uH-c7z" secondAttribute="trailing" constant="18" id="Dam-df-l3e"/>
+                            <constraint firstItem="Sit-uH-c7z" firstAttribute="top" secondItem="M64-wC-Cks" secondAttribute="bottom" constant="52" id="GEk-Ws-KCv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vaO-2t-hi9" secondAttribute="trailing" constant="18" id="aAw-dU-KiD"/>
+                            <constraint firstItem="M64-wC-Cks" firstAttribute="top" secondItem="vaO-2t-hi9" secondAttribute="bottom" id="bOC-fl-Km2"/>
+                            <constraint firstItem="xMl-gc-jFS" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.591518" id="dTc-Dq-NdT"/>
+                            <constraint firstItem="xMl-gc-jFS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fCS-wO-qZr"/>
+                            <constraint firstItem="xMl-gc-jFS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="60" id="fzB-2I-QCR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M64-wC-Cks" secondAttribute="trailing" constant="18" id="rtK-bb-j4l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7Gq-2P-Ix2"/>
+                    <connections>
+                        <outlet property="text" destination="vaO-2t-hi9" id="lmY-og-MhO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1975.36231884058" y="91.071428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hmX-hd-8XM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wcA-cY-Dxj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="754-m5-9wm">
+                        <rect key="frame" x="0.0" y="88" width="414" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="09y-PZ-0UI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bmu-pD-3XN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065.217391304348" y="91.071428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="start" width="390" height="537"/>
+        <namedColor name="AppBackground">
+            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="1" green="0.31400001049041748" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextPrimary">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="TextSecondary">
+            <color red="0.35699999332427979" green="0.34099999070167542" blue="0.34099999070167542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

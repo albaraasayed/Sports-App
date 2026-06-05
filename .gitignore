@@ -1,0 +1,52 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode
+#
+# build/ is the default folder used for most build outputs.
+build/
+DerivedData/
+
+# Ignore your personal workspace and user settings. 
+# This prevents merge conflicts when working with others.
+xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# Ignore your personal breakpoints
+*.xcbkptlist
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+# Package.resolved
+.build/
+
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# if you choose to do so, uncomment the following line:
+# Pods/
+
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo.
+# fastlane/report.xml
+# fastlane/Preview.html
+# fastlane/screenshots/**/*.png
+# fastlane/test_output
+
+# Code coverage
+*.gcno
+*.gcda
+*.xccovreport
+
+Constants.swift
