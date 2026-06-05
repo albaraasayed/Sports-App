@@ -15,16 +15,18 @@ protocol LeaguesPresenterProtocol: AnyObject {
 }
 
 class LeaguesPresenter: LeaguesPresenterProtocol {
-    
     weak var view: LeaguesViewProtocol?
     var sportType: SportType?
     
     var allLeagues: [League] = []
     var leagues: [League] = []
     
-    init(view: LeaguesViewProtocol, sportType: SportType) {
+    let networkManager: NetworkManagerProtocol
+    
+    init(view: LeaguesViewProtocol, sportType: SportType, networkManager: NetworkManagerProtocol = NetworkManager.shared) {
         self.view = view
         self.sportType = sportType
+        self.networkManager = networkManager
     }
     
     func viewDidLoad() {
@@ -33,24 +35,20 @@ class LeaguesPresenter: LeaguesPresenterProtocol {
     
     private func fetchData() {
         guard let sportType = sportType else { return }
-        
         view?.showLoading()
 
-        NetworkManager.shared.fetchLeagues(sport: sportType) { [weak self] result in
+        networkManager.fetchLeagues(sport: sportType) { [weak self] result in
             guard let self = self else { return }
             
             DispatchQueue.main.async {
                 self.view?.hideLoading()
-                
                 switch result {
                 case .success(let fetchedLeagues):
                     self.allLeagues = fetchedLeagues
                     self.leagues = fetchedLeagues
                     self.view?.displayLeagues(leagues: self.leagues)
-                    
                 case .failure(let error):
                     self.view?.showError(message: error.localizedDescription)
-                    print("Error fetching leagues: \(error)")
                 }
             }
         }
@@ -65,7 +63,6 @@ class LeaguesPresenter: LeaguesPresenterProtocol {
                 return name.lowercased().contains(query.lowercased())
             }
         }
-        
         view?.displayLeagues(leagues: self.leagues)
     }
     

@@ -28,10 +28,13 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     
     var isFavorite: Bool = false
     
-    init(view: LeagueDetailsVCProtocol, sportType: SportType, leagueId: String) {
+    let networkManager: NetworkManagerProtocol
+    
+    init(view: LeagueDetailsVCProtocol, sportType: SportType, leagueId: String, networkManager: NetworkManagerProtocol = NetworkManager.shared) {
         self.view = view
         self.sportType = sportType
         self.leagueId = leagueId
+        self.networkManager = networkManager
     }
     
     func viewDidLoad() {
@@ -40,7 +43,6 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     
     func toggleFavorite() {
         isFavorite.toggle()
-        
         view?.updateFavoriteButtonState(isFavorite: isFavorite)
     }
     
@@ -66,14 +68,14 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         
         group.enter()
         if sport == .tennis {
-            NetworkManager.shared.fetchTennisPlayersInLeague(leagueId: id) { [weak self] result in
+            networkManager.fetchTennisPlayersInLeague(leagueId: id) { [weak self] result in
                 if case .success(let players) = result {
                     self?.tennisPlayers = players
                 }
                 group.leave()
             }
         } else {
-            NetworkManager.shared.fetchTeamsInLeague(sport: sport, leagueId: id) { [weak self] result in
+            networkManager.fetchTeamsInLeague(sport: sport, leagueId: id) { [weak self] result in
                 if case .success(let fetchedTeams) = result {
                     self?.teams = fetchedTeams
                 }
@@ -82,17 +84,22 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         }
         
         group.enter()
-        NetworkManager.shared.fetchFixtures(sport: sport, leagueId: id, fromDate: todayString, toDate: nextYearString) { [weak self] result in
+        networkManager.fetchFixtures(sport: sport, leagueId: id, fromDate: todayString, toDate: nextYearString) { [weak self] result in
             if case .success(let fixtures) = result {
-                self?.upcomingMatches = fixtures
+                self?.upcomingMatches = fixtures.filter { match in
+                    let status = match.eventStatus ?? ""
+                    return status == "" || status == "Not Started"
+                }
             }
             group.leave()
         }
         
         group.enter()
-        NetworkManager.shared.fetchFixtures(sport: sport, leagueId: id, fromDate: lastYearString, toDate: todayString) { [weak self] result in
+        networkManager.fetchFixtures(sport: sport, leagueId: id, fromDate: lastYearString, toDate: todayString) { [weak self] result in
             if case .success(let fixtures) = result {
-                self?.pastMatches = fixtures
+                self?.pastMatches = fixtures.filter { match in
+                    return match.eventStatus == "Finished"
+                }
             }
             group.leave()
         }
