@@ -7,12 +7,12 @@
 
 import UIKit
 import SDWebImage
+import NVActivityIndicatorView
 
 protocol LeagueDetailsVCProtocol: AnyObject {
     func showLoading()
     func hideLoading()
     func reloadData(teams: [Team], tennisPlayers: [TennisPlayer], upcoming: [Fixture], past: [Fixture])
-    
     func updateFavoriteButtonState(isFavorite: Bool)
 }
 
@@ -20,10 +20,8 @@ class LeagueDetailsVC: UIViewController {
     
     lazy var favButton: UIBarButtonItem = {
         UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(didTapFavButton))
-        
     }()
     
-
     @objc private func didTapFavButton() {
         presenter?.toggleFavorite()
     }
@@ -42,6 +40,8 @@ class LeagueDetailsVC: UIViewController {
     @IBOutlet weak var leagueNameStackView: UIStackView!
     @IBOutlet weak var leagueNameLabel: UILabel!
     
+    var loadingIndicator: NVActivityIndicatorView!
+    
     init(coder: NSCoder, sportType: SportType, leagueId: String, leagueName: String) {
         self.sportType = sportType
         self.leagueId = leagueId
@@ -58,9 +58,9 @@ class LeagueDetailsVC: UIViewController {
         setupUI()
         leagueNameLabel.text = leagueName
         
-        if let currentSport = sportType, let currentLeagueId = leagueId {
-            presenter = LeagueDetailsPresenter(view: self, sportType: currentSport, leagueId: currentLeagueId)
-            presenter?.viewDidLoad()
+        if let currentSport = self.sportType, let currentLeagueId = self.leagueId {
+            self.presenter = LeagueDetailsPresenter(view: self, sportType: currentSport, leagueId: currentLeagueId)
+            self.presenter?.viewDidLoad()
         }
     }
     
@@ -72,12 +72,17 @@ class LeagueDetailsVC: UIViewController {
         collectionView.register(UINib(nibName: Constants.teamsCell, bundle: .main), forCellWithReuseIdentifier: Constants.teamsCell)
         collectionView.register(UINib(nibName: Constants.upcomingCell, bundle: .main), forCellWithReuseIdentifier: Constants.upcomingCell)
         collectionView.register(UINib(nibName: Constants.resultMatchCell, bundle: .main), forCellWithReuseIdentifier: Constants.resultMatchCell)
-        
         collectionView.register(SectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeaderView.identifier)
         
         collectionView.setCollectionViewLayout(createLayout(), animated: true)
-        
         navigationItem.rightBarButtonItem = favButton
+        
+        let indicatorSize: CGFloat = 50
+        let frame = CGRect(x: 0, y: 0, width: indicatorSize, height: indicatorSize)
+        
+        loadingIndicator = NVActivityIndicatorView(frame: frame, type: .ballClipRotatePulse, color: .Primary, padding: nil)
+        loadingIndicator.center = view.center
+        view.addSubview(loadingIndicator)
     }
     
     private func createLayout() -> UICollectionViewCompositionalLayout {
@@ -105,15 +110,12 @@ class LeagueDetailsVC: UIViewController {
     private func teamsSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.25), heightDimension: .absolute(134))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 8)
-        
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 16, bottom: 0, trailing: 8)
         section.orthogonalScrollingBehavior = .continuous
-        
         section.visibleItemsInvalidationHandler = { (items, offset, environment) in
             items.forEach { item in
                 let distanceFromCenter = abs((item.frame.maxX - offset.x) - environment.container.contentSize.width / 2.0)
@@ -123,18 +125,15 @@ class LeagueDetailsVC: UIViewController {
                 item.transform = CGAffineTransform(scaleX: scale, y: scale)
             }
         }
-        
         return section
     }
     
     private func upcomingSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.94), heightDimension: .absolute(190))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 8)
-        
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 42, leading: 16, bottom: 0, trailing: 8)
         section.orthogonalScrollingBehavior = .continuous
@@ -145,11 +144,9 @@ class LeagueDetailsVC: UIViewController {
     private func resultMatchsSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(160))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         group.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 0, bottom: 0, trailing: 0)
-        
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 26, leading: 16, bottom: 0, trailing: 16)
         section.orthogonalScrollingBehavior = .none
@@ -164,8 +161,13 @@ extension LeagueDetailsVC: LeagueDetailsVCProtocol {
         favButton.image = UIImage(systemName: imageName)
     }
     
-    func showLoading() { }
-    func hideLoading() { }
+    func showLoading() {
+        loadingIndicator.startAnimating()
+    }
+    
+    func hideLoading() {
+        loadingIndicator.stopAnimating()
+    }
     
     func reloadData(teams: [Team], tennisPlayers: [TennisPlayer], upcoming: [Fixture], past: [Fixture]) {
         self.teams = teams
@@ -177,7 +179,6 @@ extension LeagueDetailsVC: LeagueDetailsVCProtocol {
 }
 
 extension LeagueDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate {
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int { return 3 }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -195,7 +196,6 @@ extension LeagueDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate 
         switch indexPath.section {
         case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.teamsCell, for: indexPath) as? TeamsCell else { return UICollectionViewCell() }
-            
             if sportType == .tennis {
                 let player = tennisPlayers[indexPath.row]
                 cell.teamNameLabel.text = player.playerName ?? "Unknown Player"
@@ -219,9 +219,7 @@ extension LeagueDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate 
             
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.upcomingCell, for: indexPath) as? UpcomingCell else { return UICollectionViewCell() }
-            
             let match = upcomingMatches[indexPath.row]
-            
             cell.team1Label.text = match.homeName ?? "TBD"
             cell.team2Label.text = match.awayName ?? "TBD"
             cell.time.text = match.eventTime ?? ""
@@ -231,14 +229,11 @@ extension LeagueDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate 
             if let urlStr = match.homeLogo, let url = URL(string: urlStr) { cell.team1Image.sd_setImage(with: url, placeholderImage: placeholder) }
             if let urlStr = match.awayLogo, let url = URL(string: urlStr) { cell.team2Image.sd_setImage(with: url, placeholderImage: placeholder) }
             if let urlStr = match.leagueLogo, let url = URL(string: urlStr) { cell.leagueImage.sd_setImage(with: url, placeholderImage: placeholder) }
-            
             return cell
             
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.resultMatchCell, for: indexPath) as? ResultMatchCell else { return UICollectionViewCell() }
-            
             let match = pastMatches[indexPath.row]
-            
             cell.team1Label.text = match.homeName ?? "TBD"
             cell.team2Label.text = match.awayName ?? "TBD"
             cell.leagueRound.text = match.leagueRound ?? ""
@@ -257,7 +252,6 @@ extension LeagueDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate 
             if let urlStr = match.homeLogo, let url = URL(string: urlStr) { cell.team1Image.sd_setImage(with: url, placeholderImage: placeholder) }
             if let urlStr = match.awayLogo, let url = URL(string: urlStr) { cell.team2Image.sd_setImage(with: url, placeholderImage: placeholder) }
             if let urlStr = match.leagueLogo, let url = URL(string: urlStr) { cell.leagueLogo.sd_setImage(with: url, placeholderImage: placeholder) }
-            
             return cell
             
         default:
@@ -286,11 +280,13 @@ extension LeagueDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate 
                 let selectedTeam = teams[indexPath.row]
                 guard let id = selectedTeam.teamKey, let currentSport = sportType else { return }
                 
-                let vc: TeamDetailsVC = sb.instantiateViewController(identifier: Constants.teamDetailsVC, creator: { coder in
-                    return TeamDetailsVC(coder: coder, sportType: currentSport, teamId: id)
-                })
-                
-                self.navigationController?.pushViewController(vc, animated: true)
+                NetworkConnection.shared.isOnline(on: self) {
+                    let vc: TeamDetailsVC = sb.instantiateViewController(identifier: Constants.teamDetailsVC, creator: { coder in
+                        return TeamDetailsVC(coder: coder, sportType: currentSport, teamId: id)
+                    })
+                    
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             }
             
         default: return

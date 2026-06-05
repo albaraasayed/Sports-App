@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import NVActivityIndicatorView
 
 protocol LeaguesViewProtocol: AnyObject {
     func showLoading()
@@ -24,6 +25,8 @@ class LeaguesVC: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var leagueLabel: UILabel!
     
+    var loadingIndicator: NVActivityIndicatorView!
+    
     init(coder: NSCoder, sportType: SportType) {
         self.sportType = sportType
         super.init(coder: coder)!
@@ -35,12 +38,14 @@ class LeaguesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let sportType = self.sportType {
-            leaguePresenter = LeaguesPresenter(view: self, sportType: sportType)
-            leaguePresenter?.viewDidLoad()
-        }
         searchBar.delegate = self
         setupTableView()
+        setupIndicator()
+        
+        if let sportType = self.sportType {
+            self.leaguePresenter = LeaguesPresenter(view: self, sportType: sportType)
+            self.leaguePresenter?.viewDidLoad()
+        }
     }
     
     private func setupTableView() {
@@ -48,12 +53,25 @@ class LeaguesVC: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: Constants.leaguesCell, bundle: nil), forCellReuseIdentifier: Constants.leaguesCell)
     }
+    
+    private func setupIndicator() {
+        let indicatorSize: CGFloat = 50
+        let frame = CGRect(x: 0, y: 0, width: indicatorSize, height: indicatorSize)
+        
+        loadingIndicator = NVActivityIndicatorView(frame: frame, type: .ballClipRotatePulse, color: .Primary, padding: nil)
+        loadingIndicator.center = view.center
+        view.addSubview(loadingIndicator)
+    }
 }
 
 extension LeaguesVC: LeaguesViewProtocol {
     func showError(message: String) { }
-    func showLoading() { }
-    func hideLoading() { }
+    func showLoading() {
+        loadingIndicator.startAnimating()
+    }
+    func hideLoading() {
+        loadingIndicator.stopAnimating()
+    }
     func displayLeagues(leagues: [League]) {
         self.leaguesArray = leagues
         tableView.reloadData()
@@ -96,13 +114,18 @@ extension LeaguesVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
         let currentLeague = leaguesArray[indexPath.row]
         guard let currentSport = sportType, let selectedLeagueId = currentLeague.leagueKey, let selectedLeagueName = currentLeague.leagueName else { return }
-        let sb = UIStoryboard(name: Constants.LeagueDetailsVC, bundle: nil)
-        let vc: LeagueDetailsVC = sb.instantiateViewController(identifier: Constants.LeagueDetailsVC, creator: { coder in
-            return LeagueDetailsVC(coder: coder, sportType: currentSport, leagueId: selectedLeagueId, leagueName: selectedLeagueName)
-        })
-        navigationController?.pushViewController(vc, animated: true)
+        
+        NetworkConnection.shared.isOnline(on: self) {
+            let sb = UIStoryboard(name: Constants.LeagueDetailsVC, bundle: nil)
+            let vc: LeagueDetailsVC = sb.instantiateViewController(identifier: Constants.LeagueDetailsVC, creator: { coder in
+                return LeagueDetailsVC(coder: coder, sportType: currentSport, leagueId: selectedLeagueId, leagueName: selectedLeagueName)
+            })
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

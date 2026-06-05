@@ -30,10 +30,12 @@ class TeamDetailsPresenter: TeamDetailsPresenterProtocol {
             guard let self = self else { return }
             
             DispatchQueue.main.async {
+                self.view?.hideLoading()
                 switch result {
                 case .success(let teams):
                     if let firstTeam = teams.first, let players = firstTeam.players {
-                        self.view?.hideLoaPlayers(players: players, teamName: firstTeam.teamName ?? "Unknown Team")
+                        self.view?.loadPlayers(players: players, teamName: firstTeam.teamName ?? "Unknown Team")
+                        
                     } else {
                         self.view?.showError(message: "No players found for this team.")
                     }

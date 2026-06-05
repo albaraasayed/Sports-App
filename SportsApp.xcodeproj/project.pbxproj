@@ -15,6 +15,9 @@
 		C53964F62FC1F56E00956CD0 /* HomeVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C53964F52FC1F56E00956CD0 /* HomeVC.storyboard */; };
 		C53AE4152FD3151F00D72C3C /* FavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53AE4142FD3151500D72C3C /* FavoritesModel.swift */; };
 		C560F8112FD3430E00366447 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C560F8102FD3430E00366447 /* UserDefaultsManager.swift */; };
+		C560F8132FD3508D00366447 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C560F8122FD3508D00366447 /* NetworkConnection.swift */; };
+		C560F8162FD3522900366447 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = C560F8152FD3522900366447 /* NVActivityIndicatorView */; };
+		C560F8182FD3522900366447 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = C560F8172FD3522900366447 /* NVActivityIndicatorViewExtended */; };
 		C58B0DF72FD1DA4B001CECAD /* LeaguesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B0DF62FD1DA4B001CECAD /* LeaguesModel.swift */; };
 		C58B0DF92FD1DBEB001CECAD /* TeamsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B0DF82FD1DBEB001CECAD /* TeamsModel.swift */; };
 		C58B0DFD2FD1F302001CECAD /* PlayersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B0DFC2FD1F302001CECAD /* PlayersModel.swift */; };
@@ -74,6 +77,7 @@
 		C53964F52FC1F56E00956CD0 /* HomeVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeVC.storyboard; sourceTree = "<group>"; };
 		C53AE4142FD3151500D72C3C /* FavoritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModel.swift; sourceTree = "<group>"; };
 		C560F8102FD3430E00366447 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		C560F8122FD3508D00366447 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		C58B0DF62FD1DA4B001CECAD /* LeaguesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesModel.swift; sourceTree = "<group>"; };
 		C58B0DF82FD1DBEB001CECAD /* TeamsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsModel.swift; sourceTree = "<group>"; };
 		C58B0DFC2FD1F302001CECAD /* PlayersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersModel.swift; sourceTree = "<group>"; };
@@ -130,9 +134,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C560F8162FD3522900366447 /* NVActivityIndicatorView in Frameworks */,
 				C58C447A2FCF318500D95F98 /* SDWebImage in Frameworks */,
 				C58C447C2FCF318500D95F98 /* SDWebImageMapKit in Frameworks */,
 				C53964EE2FC1F2F600956CD0 /* Alamofire in Frameworks */,
+				C560F8182FD3522900366447 /* NVActivityIndicatorViewExtended in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +365,7 @@
 				C5DF0D932FC1DC6B0089B011 /* Fonts.swift */,
 				C5DF0D892FC1D1500089B011 /* Colors.swift */,
 				C58C44762FCF158D00D95F98 /* enums.swift */,
+				C560F8122FD3508D00366447 /* NetworkConnection.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -437,6 +444,8 @@
 				C53964ED2FC1F2F600956CD0 /* Alamofire */,
 				C58C44792FCF318500D95F98 /* SDWebImage */,
 				C58C447B2FCF318500D95F98 /* SDWebImageMapKit */,
+				C560F8152FD3522900366447 /* NVActivityIndicatorView */,
+				C560F8172FD3522900366447 /* NVActivityIndicatorViewExtended */,
 			);
 			productName = SportsApp;
 			productReference = C5DF0D552FC1C00D0089B011 /* SportsApp.app */;
@@ -469,6 +478,7 @@
 			packageReferences = (
 				C53964EC2FC1F2F600956CD0 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				C58C44782FCF318500D95F98 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				C560F8142FD3522900366447 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C5DF0D562FC1C00D0089B011 /* Products */;
@@ -533,6 +543,7 @@
 				C58B0E032FD1F7BE001CECAD /* APIConfig.swift in Sources */,
 				C53AE4152FD3151F00D72C3C /* FavoritesModel.swift in Sources */,
 				C58B0DF92FD1DBEB001CECAD /* TeamsModel.swift in Sources */,
+				C560F8132FD3508D00366447 /* NetworkConnection.swift in Sources */,
 				C5DE9B042FCC66CB0094A77A /* TeamDetailsVC.swift in Sources */,
 				C58C44752FCF110B00D95F98 /* LeaguesPresenter.swift in Sources */,
 				C53964F42FC1F55800956CD0 /* HomeVC.swift in Sources */,
@@ -787,6 +798,14 @@
 				minimumVersion = 5.12.0;
 			};
 		};
+		C560F8142FD3522900366447 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView?utm_source=chatgpt.com";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
 		C58C44782FCF318500D95F98 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -802,6 +821,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C53964EC2FC1F2F600956CD0 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		C560F8152FD3522900366447 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C560F8142FD3522900366447 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		C560F8172FD3522900366447 /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C560F8142FD3522900366447 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
 		};
 		C58C44792FCF318500D95F98 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;

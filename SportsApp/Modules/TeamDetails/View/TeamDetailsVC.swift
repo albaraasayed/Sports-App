@@ -7,10 +7,12 @@
 
 import UIKit
 import SDWebImage
+import NVActivityIndicatorView
 
 protocol TeamDetilsVCProtocol: AnyObject {
     func showLoading()
-    func hideLoaPlayers(players: [FootballPlayer], teamName: String)
+    func hideLoading()
+    func loadPlayers(players: [FootballPlayer], teamName: String)
     func showError(message: String)
     func reloadData()
 }
@@ -26,6 +28,8 @@ class TeamDetailsVC: UIViewController {
     @IBOutlet var forward: [UIView]!
     
     @IBOutlet weak var teamName: UILabel!
+    
+    var loadingIndicator: NVActivityIndicatorView!
     
     var presenter: TeamDetailsPresenterProtocol?
     var sportType: SportType?
@@ -53,10 +57,11 @@ class TeamDetailsVC: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupCollectionView()
+        setupIndicator()
         
-        if let currentSport = sportType, let currentTeamId = teamId {
-            presenter = TeamDetailsPresenter(view: self, sportType: currentSport, teamId: currentTeamId)
-            presenter?.viewDidLoad()
+        if let currentSport = self.sportType, let currentTeamId = self.teamId {
+            self.presenter = TeamDetailsPresenter(view: self, sportType: currentSport, teamId: currentTeamId)
+            self.presenter?.viewDidLoad()
         }
     }
     
@@ -69,6 +74,15 @@ class TeamDetailsVC: UIViewController {
         
         self.title = "Team Details"
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+    
+    private func setupIndicator() {
+        let indicatorSize: CGFloat = 50
+        let frame = CGRect(x: 0, y: 0, width: indicatorSize, height: indicatorSize)
+        
+        loadingIndicator = NVActivityIndicatorView(frame: frame, type: .ballClipRotatePulse, color: .Primary, padding: nil)
+        loadingIndicator.center = view.center
+        view.addSubview(loadingIndicator)
     }
     
     private func setupCollectionView() {
@@ -120,7 +134,6 @@ class TeamDetailsVC: UIViewController {
     }
     
     private func updatePlaygroundSelection() {
-        
         allCircles.forEach { $0.backgroundColor = .Primary }
         
         guard !players.isEmpty, currentIndex >= 0, currentIndex < players.count else { return }
@@ -130,15 +143,12 @@ class TeamDetailsVC: UIViewController {
         
         if position.contains("Goalkeeper") {
             goalKeeper.backgroundColor = .white
-            
         } else if position.contains("Defender") {
             let randomCircle = defenders.randomElement()
             randomCircle?.backgroundColor = .white
-            
         } else if position.contains("Midfielder") {
             let randomCircle = midfielders.randomElement()
             randomCircle?.backgroundColor = .white
-            
         } else if position.contains("Forward") || position.contains("Attacker") {
             let randomCircle = forward.randomElement()
             randomCircle?.backgroundColor = .white
@@ -195,14 +205,16 @@ extension TeamDetailsVC: UICollectionViewDataSource {
     }
 }
 
-
 extension TeamDetailsVC: TeamDetilsVCProtocol {
-    
     func showLoading() {
-        // Show indicator
+        loadingIndicator.startAnimating()
     }
     
-    func hideLoaPlayers(players: [FootballPlayer], teamName: String) {
+    func hideLoading() {
+        loadingIndicator.stopAnimating()
+    }
+    
+    func loadPlayers(players: [FootballPlayer], teamName: String) {
         self.players = players
         self.teamName.text = teamName
         self.collectionView.reloadData()

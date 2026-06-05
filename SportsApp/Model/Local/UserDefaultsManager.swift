@@ -6,15 +6,32 @@
 //
 
 import Foundation
-import Network
+
 
 protocol UserDefaultsManagerProtocol {
-    
-    
-    
+    func disableOnboarding()
+    func isOnboardingDisabled() -> Bool
+    func changeLanguage(to language: String)
+    func changeTheme(to theme: String)
 }
 
 class UserDefaultsManager : UserDefaultsManagerProtocol {
-
     
+    let userDefaults: UserDefaults = .standard
+    private init(){}
+    func disableOnboarding() {
+        
+    }
+    
+    func isOnboardingDisabled() -> Bool {
+        return false
+    }
+    
+    func changeLanguage(to language: String) {
+        
+    }
+    
+    func changeTheme(to theme: String) {
+        
+    }
 }

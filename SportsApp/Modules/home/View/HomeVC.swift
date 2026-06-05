@@ -16,14 +16,12 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupCollectionView()
     }
     
     private func setupCollectionView() {
         collection.delegate = self
         collection.dataSource = self
-        
         collection.register(UINib(nibName: "SportsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
     }
 }
@@ -67,15 +65,15 @@ extension HomeVC: UICollectionViewDelegate {
         
         sportType = sportsList[indexPath.item]
         
-        let sb = UIStoryboard(name: Constants.leaguesVC, bundle: nil)
-        let vc = sb.instantiateViewController(identifier: Constants.leaguesVC) {
-            [weak self] coder in
-            guard let self else { return UIViewController(nibName: nil, bundle: nil) }
-            let leagueVC = LeaguesVC(coder: coder, sportType: self.sportType)
-            return leagueVC
+        NetworkConnection.shared.isOnline(on: self) {
+            let sb = UIStoryboard(name: Constants.leaguesVC, bundle: nil)
+            let vc = sb.instantiateViewController(identifier: Constants.leaguesVC) { [weak self] coder in
+                guard let self else { return UIViewController(nibName: nil, bundle: nil) }
+                return LeaguesVC(coder: coder, sportType: self.sportType)
+            }
+            
+            self.navigationController?.pushViewController(vc, animated: true)
         }
-        
-        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
