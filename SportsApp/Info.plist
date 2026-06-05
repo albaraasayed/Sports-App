@@ -2,6 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BebasNeue-Thin.otf</string>
+		<string>BebasNeue-Regular.otf</string>
+		<string>BebasNeue-Light.otf</string>
+		<string>BebasNeue-Book.otf</string>
+		<string>BebasNeue-Bold.otf</string>
+		<string>Manrope-Thin.otf</string>
+		<string>Manrope-SemiBold.otf</string>
+		<string>Manrope-Regular.otf</string>
+		<string>Manrope-Medium.otf</string>
+		<string>Manrope-Light.otf</string>
+		<string>Manrope-Bold.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
