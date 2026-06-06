@@ -8,19 +8,6 @@
 import XCTest
 @testable import SportsApp
 
-final class SportsAppTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        
-    }
-
-    override func tearDownWithError() throws {
-       
-    }
-
-}
-
-
 
 final class LeagueDetailsPresenterTests: XCTestCase {
     

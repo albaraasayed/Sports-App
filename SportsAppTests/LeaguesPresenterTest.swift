@@ -8,6 +8,7 @@
 import XCTest
 @testable import SportsApp
 
+
 final class LeaguesPresenterTests: XCTestCase {
     
     var sut: LeaguesPresenter!
@@ -31,6 +32,24 @@ final class LeaguesPresenterTests: XCTestCase {
         mockNetworkManager = nil
     }
     
+    
+    private func createDummyLeague(id: Int, name: String, country: String) -> League {
+        let jsonString = """
+        {
+            "league_key": \(id),
+            "league_name": "\(name)",
+            "country_name": "\(country)",
+            "league_logo": null,
+            "league_year": null
+        }
+        """
+        let data = Data(jsonString.utf8)
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return try! decoder.decode(League.self, from: data)
+    }
+    
+    
     func testPresenterInitialization() {
         XCTAssertNotNil(sut)
         XCTAssertEqual(sut.sportType, .football)
@@ -41,12 +60,13 @@ final class LeaguesPresenterTests: XCTestCase {
         XCTAssertEqual(sut.sportType, .basketball)
     }
     
+    
     func testViewDidLoadFetchesAndDisplaysLeaguesSuccess() {
-
         mockNetworkManager.shouldReturnError = false
         
-        let dummyLeague1 = League(leagueKey: 1, leagueName: "Premier League", countryName: "England", leagueLogo: nil, leagueYear: nil)
-        let dummyLeague2 = League(leagueKey: 2, leagueName: "La Liga", countryName: "Spain", leagueLogo: nil, leagueYear: nil)
+        let dummyLeague1 = createDummyLeague(id: 1, name: "Premier League", country: "England")
+        let dummyLeague2 = createDummyLeague(id: 2, name: "La Liga", country: "Spain")
+        
         mockNetworkManager.mockLeagues = [dummyLeague1, dummyLeague2]
         
         let expectation = expectation(description: "Wait for displayLeagues to be called on main thread")
@@ -72,7 +92,6 @@ final class LeaguesPresenterTests: XCTestCase {
         
         sut.viewDidLoad()
         
-        // Assert
         waitForExpectations(timeout: 2.0) { _ in
             XCTAssertTrue(self.mockView.isHideLoadingCalled)
             XCTAssertNotNil(self.mockView.errorMessage)
@@ -80,56 +99,44 @@ final class LeaguesPresenterTests: XCTestCase {
         }
     }
     
-    // MARK: - Search Logic Tests
+
     func testSearchLeaguesWithEmptyQueryReturnsAllLeagues() {
-        
-        let dummyLeague = League(leagueKey: 1, leagueName: "Premier League", countryName: "England", leagueLogo: nil, leagueYear: nil)
+        let dummyLeague = createDummyLeague(id: 1, name: "Premier League", country: "England")
         sut.allLeagues = [dummyLeague]
-        
         
         sut.searchLeagues(with: "")
         
-        // Assert
         XCTAssertEqual(sut.leagues.count, 1)
         XCTAssertEqual(mockView.displayedLeagues?.count, 1)
     }
     
     func testSearchLeaguesWithValidQueryFiltersCorrectly() {
-        // Arrange
-        let league1 = League(leagueKey: 1, leagueName: "Premier League", countryName: "England", leagueLogo: nil, leagueYear: nil)
-        let league2 = League(leagueKey: 2, leagueName: "La Liga", countryName: "Spain", leagueLogo: nil, leagueYear: nil)
+        let league1 = createDummyLeague(id: 1, name: "Premier League", country: "England")
+        let league2 = createDummyLeague(id: 2, name: "La Liga", country: "Spain")
         sut.allLeagues = [league1, league2]
         
-        // Act
         sut.searchLeagues(with: "Premier")
         
-        // Assert
         XCTAssertEqual(sut.leagues.count, 1)
         XCTAssertEqual(sut.leagues.first?.leagueName, "Premier League")
         XCTAssertEqual(mockView.displayedLeagues?.first?.leagueName, "Premier League")
     }
     
     func testSearchLeaguesIsCaseInsensitive() {
-        // Arrange
-        let league = League(leagueKey: 1, leagueName: "Serie A", countryName: "Italy", leagueLogo: nil, leagueYear: nil)
+        let league = createDummyLeague(id: 1, name: "Serie A", country: "Italy")
         sut.allLeagues = [league]
         
-        // Act
         sut.searchLeagues(with: "serie a")
         
-        // Assert
         XCTAssertEqual(sut.leagues.count, 1)
     }
     
     func testSearchLeaguesWithNoMatchReturnsEmpty() {
-        // Arrange
-        let league = League(leagueKey: 1, leagueName: "Bundesliga", countryName: "Germany", leagueLogo: nil, leagueYear: nil)
+        let league = createDummyLeague(id: 1, name: "Bundesliga", country: "Germany")
         sut.allLeagues = [league]
         
-        // Act
         sut.searchLeagues(with: "NBA")
         
-        // Assert
         XCTAssertTrue(sut.leagues.isEmpty)
         XCTAssertTrue(mockView.displayedLeagues?.isEmpty == true)
     }

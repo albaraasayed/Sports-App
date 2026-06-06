@@ -43,6 +43,9 @@ class MockLeagueDetailsVC: LeagueDetailsVCProtocol {
 }
 
 
+import Foundation
+@testable import SportsApp
+
 class MockNetworkManager: NetworkManagerProtocol {
     
     var shouldReturnError: Bool
@@ -50,6 +53,7 @@ class MockNetworkManager: NetworkManagerProtocol {
     var mockTeams: [Team] = []
     var mockTennisPlayers: [TennisPlayer] = []
     var mockUpcomingFixtures: [Fixture] = []
+    var mockLeagues: [League] = []
     
     enum ResponseError: Error {
         case fetchError
@@ -59,7 +63,13 @@ class MockNetworkManager: NetworkManagerProtocol {
         self.shouldReturnError = shouldReturnError
     }
     
-    func fetchLeagues(sport: SportType, completion: @escaping (Result<[League], Error>) -> Void) { }
+    func fetchLeagues(sport: SportType, completion: @escaping (Result<[League], Error>) -> Void) {
+        if shouldReturnError {
+            completion(.failure(ResponseError.fetchError))
+        } else {
+            completion(.success(mockLeagues))
+        }
+    }
     
     func fetchFixtures(sport: SportType, fromDate: String, toDate: String, completion: @escaping (Result<[Fixture], Error>) -> Void) {
         if shouldReturnError {
@@ -77,7 +87,13 @@ class MockNetworkManager: NetworkManagerProtocol {
         }
     }
     
-    func fetchTeam(sport: SportType, teamId: String, completion: @escaping (Result<[Team], Error>) -> Void) { }
+    func fetchTeam(sport: SportType, teamId: String, completion: @escaping (Result<[Team], Error>) -> Void) {
+        if shouldReturnError {
+            completion(.failure(ResponseError.fetchError))
+        } else {
+            completion(.success(mockTeams))
+        }
+    }
     
     func fetchTeamsInLeague(sport: SportType, leagueId: String, completion: @escaping (Result<[Team], Error>) -> Void) {
         if shouldReturnError {
@@ -87,7 +103,13 @@ class MockNetworkManager: NetworkManagerProtocol {
         }
     }
     
-    func fetchTennisPlayer(playerId: String, completion: @escaping (Result<[TennisPlayer], Error>) -> Void) { }
+    func fetchTennisPlayer(playerId: String, completion: @escaping (Result<[TennisPlayer], Error>) -> Void) {
+        if shouldReturnError {
+            completion(.failure(ResponseError.fetchError))
+        } else {
+            completion(.success(mockTennisPlayers))
+        }
+    }
     
     func fetchTennisPlayersInLeague(leagueId: String, completion: @escaping (Result<[TennisPlayer], Error>) -> Void) {
         if shouldReturnError {
@@ -104,7 +126,7 @@ class MockLeaguesView: LeaguesViewProtocol {
     var isHideLoadingCalled = false
     var displayedLeagues: [League]?
     var errorMessage: String?
-
+    
     var displayLeaguesExpectation: XCTestExpectation?
     var showErrorExpectation: XCTestExpectation?
     
