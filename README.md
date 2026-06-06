@@ -140,9 +140,9 @@ We take reliability seriously. The app includes a comprehensive test suite targe
    &nbsp;&nbsp;&nbsp;
    <img width="200" alt="image" src="https://github.com/user-attachments/assets/d84d0319-2de9-43b9-a301-eff8bdddb4dc" />
    &nbsp;&nbsp;&nbsp;
-<img width="882" height="1816" alt="image" src="https://github.com/user-attachments/assets/33af9f66-d87f-4b3a-a169-3c270a21a598" />
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/33af9f66-d87f-4b3a-a169-3c270a21a598" />
    &nbsp;&nbsp;&nbsp;
-   <img width="880" height="1832" alt="image" src="https://github.com/user-attachments/assets/f2c4acb4-e9cf-4c86-8242-be8ea0a9382c" />
+   <img width="200"  alt="image" src="https://github.com/user-attachments/assets/f2c4acb4-e9cf-4c86-8242-be8ea0a9382c" />
 
 </p>
 
