@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Manrope-SemiBold.otf">
+            <string>Manrope-Semibold</string>
+        </array>
+        <array key="Manrope-Thin.otf">
+            <string>Manrope-Thin</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatsCell" rowHeight="210" id="KGk-i7-Jjw" customClass="StatsCell" customModule="SportsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="204"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="358" height="204"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="WIz-Ff-Yq5">
+                        <rect key="frame" x="16" y="15.999999999999996" width="326" height="40.666666666666657"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Pmx-XI-70N">
+                                <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="40.666666666666664"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZE-nK-csx">
+                                        <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="14"/>
+                                        <fontDescription key="fontDescription" name="Manrope-Thin" family="Manrope" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2025" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcJ-2i-N2K">
+                                        <rect key="frame" x="0.33333333333333215" y="14.000000000000002" width="35" height="26.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="22"/>
+                                        <color key="textColor" name="Primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fge-hy-cNU">
+                                <rect key="frame" x="58.666666666666671" y="18" width="100.00000000000001" height="5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="V6A-Ir-jbf"/>
+                                    <constraint firstAttribute="width" constant="100" id="wy9-GQ-Yuy"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CJq-m2-4Ac">
+                                <rect key="frame" x="182" y="0.0" width="51" height="40.666666666666664"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFH-Jx-6ux">
+                                        <rect key="frame" x="13.666666666666655" y="0.0" width="23.333333333333329" height="14"/>
+                                        <fontDescription key="fontDescription" name="Manrope-Thin" family="Manrope" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhe-Di-NYx">
+                                        <rect key="frame" x="0.0" y="14.000000000000002" width="51" height="26.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="22"/>
+                                        <color key="textColor" name="Primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="W0q-82-1Ua">
+                                <rect key="frame" x="256" y="0.0" width="26.333333333333314" height="40.666666666666664"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6F-El-pHb">
+                                        <rect key="frame" x="1.6666666666666856" y="0.0" width="23" height="14"/>
+                                        <fontDescription key="fontDescription" name="Manrope-Thin" family="Manrope" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="158" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vh1-TX-pwp">
+                                        <rect key="frame" x="0.0" y="14.000000000000002" width="26.333333333333332" height="26.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="22"/>
+                                        <color key="textColor" name="Primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9If-Bj-6od">
+                                <rect key="frame" x="305.66666666666669" y="0.0" width="20.333333333333314" height="40.666666666666664"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gx-xE-fO2">
+                                        <rect key="frame" x="0.0" y="0.0" width="20.333333333333332" height="14"/>
+                                        <fontDescription key="fontDescription" name="Manrope-Thin" family="Manrope" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EiH-Gk-4eM">
+                                        <rect key="frame" x="1.3333333333333144" y="14.000000000000002" width="17.666666666666668" height="26.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="22"/>
+                                        <color key="textColor" name="Primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xai-vT-aW3">
+                        <rect key="frame" x="16" y="72.666666666666686" width="326" height="115.33333333333331"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rVp-b5-ODa">
+                                <rect key="frame" x="0.0" y="0.0" width="326" height="28"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wm-Vq-Nkr">
+                                        <rect key="frame" x="16" y="4" width="50" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="8hg-1O-YW9"/>
+                                            <constraint firstAttribute="width" constant="50" id="NnR-A2-RWH"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3M-fG-Hau">
+                                        <rect key="frame" x="152" y="5.6666666666666572" width="30" height="16.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="Manrope-Semibold" family="Manrope" pointSize="12"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Losses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noW-Sa-abp">
+                                        <rect key="frame" x="268" y="5.6666666666666572" width="42" height="16.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="Manrope-Semibold" family="Manrope" pointSize="12"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.08235294118" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="4" leading="16" bottom="4" trailing="16"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HaE-TS-uhs">
+                                <rect key="frame" x="0.0" y="27.999999999999993" width="326" height="87.333333333333314"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Bcd-jg-Nj9">
+                                        <rect key="frame" x="4" y="8" width="70" height="71.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Match" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGC-6P-kLv">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="15"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hard surface" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMo-u7-pdY">
+                                                <rect key="frame" x="0.0" y="19" width="70" height="14.666666666666664"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clay surface" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cre-el-hCt">
+                                                <rect key="frame" x="0.0" y="37.666666666666671" width="70" height="15"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grass surface" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlS-0y-o1g">
+                                                <rect key="frame" x="0.0" y="56.666666666666664" width="70" height="14.666666666666664"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="wof-AT-8cP"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="tct-36-Cyi">
+                                        <rect key="frame" x="130" y="8" width="70" height="71.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eli-jx-sKE">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="15"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaO-gl-8ip">
+                                                <rect key="frame" x="0.0" y="19" width="70" height="14.666666666666664"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SJ-7L-RYE">
+                                                <rect key="frame" x="0.0" y="37.666666666666671" width="70" height="15"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="77" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDR-zK-doX">
+                                                <rect key="frame" x="0.0" y="56.666666666666664" width="70" height="14.666666666666664"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="woB-QR-1Io"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="mFY-m8-90D">
+                                        <rect key="frame" x="256" y="8" width="70" height="71.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yql-Bu-Icx">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="15"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlC-nH-TEH">
+                                                <rect key="frame" x="0.0" y="19" width="70" height="14.666666666666664"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYn-VF-y82">
+                                                <rect key="frame" x="0.0" y="37.666666666666671" width="70" height="15"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vB5-qk-3y8">
+                                                <rect key="frame" x="0.0" y="56.666666666666664" width="70" height="14.666666666666664"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="14"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="tnq-GU-crN"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="4" bottom="8" trailing="0.0"/>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="WIz-Ff-Yq5" secondAttribute="trailing" constant="16" id="1sy-80-4Ic"/>
+                    <constraint firstAttribute="bottom" secondItem="xai-vT-aW3" secondAttribute="bottom" constant="16" id="4nU-lL-jWf"/>
+                    <constraint firstItem="WIz-Ff-Yq5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="G98-uM-THb"/>
+                    <constraint firstItem="xai-vT-aW3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="aqJ-tS-aed"/>
+                    <constraint firstItem="WIz-Ff-Yq5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="dRM-H2-T6Y"/>
+                    <constraint firstItem="xai-vT-aW3" firstAttribute="top" secondItem="WIz-Ff-Yq5" secondAttribute="bottom" constant="16" id="pOY-Cy-Ynu"/>
+                    <constraint firstAttribute="trailing" secondItem="xai-vT-aW3" secondAttribute="trailing" constant="16" id="z18-rE-PYZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="clayLostLabel" destination="BYn-VF-y82" id="V7r-8s-7CL"/>
+                <outlet property="clayWonLabel" destination="1SJ-7L-RYE" id="nCd-kt-eK9"/>
+                <outlet property="grassLostLabel" destination="vB5-qk-3y8" id="PYb-Es-ygJ"/>
+                <outlet property="grassWonLabel" destination="hDR-zK-doX" id="dzF-X3-tfP"/>
+                <outlet property="hardLostLabel" destination="ZlC-nH-TEH" id="FPB-Nc-fkH"/>
+                <outlet property="hardWonLabel" destination="PaO-gl-8ip" id="88u-Hq-it2"/>
+                <outlet property="matchLostLabel" destination="Yql-Bu-Icx" id="xRy-0o-9ZY"/>
+                <outlet property="matchWonLabel" destination="eli-jx-sKE" id="ynM-tV-GKi"/>
+                <outlet property="rankLabel" destination="Vh1-TX-pwp" id="oTy-ZR-JJ1"/>
+                <outlet property="seasonLabel" destination="KcJ-2i-N2K" id="l3h-UD-MdX"/>
+                <outlet property="titleLabel" destination="EiH-Gk-4eM" id="fPC-Ym-kFq"/>
+                <outlet property="typeLabel" destination="Yhe-Di-NYx" id="Xoa-yk-dwc"/>
+            </connections>
+            <point key="canvasLocation" x="87.022900763358777" y="208.45070422535213"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Primary">
+            <color red="1" green="0.31400001049041748" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

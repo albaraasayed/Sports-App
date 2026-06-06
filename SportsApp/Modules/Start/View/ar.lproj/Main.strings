@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Watch sports live or highlights, read every news from your smartphone"; ObjectID = "M64-wC-Cks"; */
+"M64-wC-Cks.text" = "شاهد البث المباشر للأحداث الرياضية أو ملخصاتها، واقرأ جميع الأخبار من هاتفك الذكي.";
+
+/* Class = "UIButton"; configuration.title = "Start"; ObjectID = "Sit-uH-c7z"; */
+"Sit-uH-c7z.configuration.title" = "إبدأ الأن";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Sit-uH-c7z"; */
+"Sit-uH-c7z.normalTitle" = "زد";
+
+/* Class = "UILabel"; text = "keep an eye on the stadium"; ObjectID = "vaO-2t-hi9"; */
+"vaO-2t-hi9.text" = "راقب الملعب";

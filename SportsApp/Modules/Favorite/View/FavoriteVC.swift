@@ -61,7 +61,7 @@ extension FavoriteVC: UITableViewDataSource {
         let formattedSubtitle = "\(sportString) / \(countryString)"
         
         cell.configureBasicInfo(name: fav.name ?? "Unknown", subtitle: formattedSubtitle, isFavorite: true)
-        cell.setLocalImage(from: fav.logoData)
+        cell.setLocalImage(from: fav.logoData, sportType: SportType(rawValue: fav.sportType!) ?? .tennis)
         
         cell.delegate = self
         return cell
@@ -80,19 +80,21 @@ extension FavoriteVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let favLeague = favorites[indexPath.row]
-        
-        guard let leagueId = favLeague.leagueId,
-              let sportString = favLeague.sportType,
-              let sportEnum = SportType(rawValue: sportString.lowercased()) else { return }
-        
         NetworkConnection.shared.isOnline(on: self) {
-            let sb = UIStoryboard(name: Constants.leagueDetailsVC, bundle: nil)
+            [weak self] in
+            guard let self else { return }
             
-            let vc: LeagueDetailsVC = sb.instantiateViewController(identifier: Constants.leagueDetailsVC, creator: { coder in
-                return LeagueDetailsVC(coder: coder, sportType: sportEnum, leagueId: leagueId, leagueName: favLeague.name ?? "")
-            })
-            print("Navigation Controller: \(String(describing: self.navigationController))")
+            let favLeague = favorites[indexPath.row]
+            
+            guard let id = favLeague.leagueId else { return }
+            guard let name = favLeague.name else { return }
+            guard let sport = favLeague.sportType else { return }
+            guard let sportType = SportType(rawValue: sport) else { return }
+            
+            let sb = UIStoryboard(name: Constants.leagueDetailsVC, bundle: nil)
+            let vc = sb.instantiateViewController(identifier: Constants.leagueDetailsVC) { coder in
+                return LeagueDetailsVC(coder: coder, sportType: sportType, leagueId: id, leagueName: name)
+            }
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

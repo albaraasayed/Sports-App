@@ -62,6 +62,21 @@ class LeaguesVC: UIViewController {
         loadingIndicator.center = view.center
         view.addSubview(loadingIndicator)
     }
+    
+    private func getPlaceholderImage(for sport: SportType?) -> UIImage {
+        switch sport {
+        case .football:
+            return UIImage(named: "Football Placeholder") ?? UIImage(named: "image-placeholder")!
+        case .basketball:
+            return UIImage(named: "Basketball Placeholder") ?? UIImage(named: "image-placeholder")!
+        case .cricket:
+            return UIImage(named: "Cricket Placeholder") ?? UIImage(named: "image-placeholder")!
+        case .tennis:
+            return UIImage(named: "Tennis Placeholder") ?? UIImage(named: "image-placeholder")!
+        default:
+            return UIImage(named: "image-placeholder")!
+        }
+    }
 }
 
 extension LeaguesVC: LeaguesViewProtocol {
@@ -100,8 +115,15 @@ extension LeaguesVC: UITableViewDataSource, UITableViewDelegate {
             subtitleText = currentLeague.countryName ?? "Country"
         }
         
+        let placeholder = getPlaceholderImage(for: sportType)
+        
         cell.configureBasicInfo(name: currentLeague.leagueName ?? "League", subtitle: subtitleText, isFavorite: isFav)
-        cell.setNetworkImage(from: currentLeague.leagueLogo ?? "")
+        
+        if let logoString = currentLeague.leagueLogo, let url = URL(string: logoString) {
+            cell.leagueImage.sd_setImage(with: url, placeholderImage: placeholder)
+        } else {
+            cell.leagueImage.image = placeholder
+        }
         
         cell.delegate = self
         return cell

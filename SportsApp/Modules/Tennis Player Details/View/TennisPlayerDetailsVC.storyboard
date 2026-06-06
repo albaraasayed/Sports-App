@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Manrope-SemiBold.otf">
+            <string>Manrope-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Tennis Player DetailsVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="TennisPlayerDetailsVC" id="Y6W-OH-hqX" customClass="TennisPlayerDetailsVC" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="5ml-48-vm0">
+                                <rect key="frame" x="131.66666666666669" y="117.99999999999999" width="129.66666666666669" height="166.66666666666663"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UKe-7M-u39">
+                                        <rect key="frame" x="0.0" y="0.0" width="129.66666666666666" height="129.33333333333334"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="UKe-7M-u39" secondAttribute="height" multiplier="1:1" id="48w-MR-Hby"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRu-Wf-0tX">
+                                        <rect key="frame" x="0.0" y="145.33333333333331" width="129.66666666666666" height="21.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="Manrope-Semibold" family="Manrope" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8Os-FH-eLC">
+                                <rect key="frame" x="16" y="308.66666666666669" width="361" height="82"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="FfH-ez-vL2">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="24"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9k-Jc-MLk">
+                                                <rect key="frame" x="0.0" y="0.0" width="230.33333333333334" height="24"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="20"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EGYPT" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4a-an-CzC">
+                                                <rect key="frame" x="230.33333333333337" y="0.0" width="130.66666666666663" height="24"/>
+                                                <fontDescription key="fontDescription" name="Manrope-Semibold" family="Manrope" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="9UF-WK-0KI">
+                                        <rect key="frame" x="0.0" y="40" width="361" height="24"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Berth Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EsF-7l-Etu">
+                                                <rect key="frame" x="0.0" y="0.0" width="214.33333333333334" height="24"/>
+                                                <fontDescription key="fontDescription" name="BebasNeue" family="Bebas Neue" pointSize="20"/>
+                                                <color key="textColor" name="Primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18/9/1995" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3K-Vs-lPW">
+                                                <rect key="frame" x="214.33333333333337" y="0.0" width="146.66666666666663" height="24"/>
+                                                <fontDescription key="fontDescription" name="Manrope-Semibold" family="Manrope" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6PN-EL-EVD">
+                                        <rect key="frame" x="0.0" y="80" width="361" height="2"/>
+                                        <color key="backgroundColor" name="Primary"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="6VQ-yK-9Jz"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Y3M-EI-buw">
+                                <rect key="frame" x="16" y="414.66666666666669" width="361" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Oa9-yR-nWk"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Stats"/>
+                                    <segment title="Tournaments"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="t48-tV-xei">
+                                <rect key="frame" x="0.0" y="480.66666666666674" width="393" height="303.33333333333326"/>
+                                <color key="backgroundColor" name="AppBackground"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="8ah-lG-m8c">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="51"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8ah-lG-m8c" id="hbT-2a-JOe">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="51"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="AppBackground"/>
+                        <constraints>
+                            <constraint firstItem="5ml-48-vm0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7dc-IV-2XR"/>
+                            <constraint firstItem="Y3M-EI-buw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="9qp-kv-BGk"/>
+                            <constraint firstItem="8Os-FH-eLC" firstAttribute="top" secondItem="5ml-48-vm0" secondAttribute="bottom" constant="24" id="PJk-Cl-mbn"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8Os-FH-eLC" secondAttribute="trailing" constant="16" id="TFw-GM-zuH"/>
+                            <constraint firstItem="8Os-FH-eLC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="bN1-8P-aob"/>
+                            <constraint firstItem="t48-tV-xei" firstAttribute="top" secondItem="Y3M-EI-buw" secondAttribute="bottom" constant="24" id="bs4-GB-FBm"/>
+                            <constraint firstItem="5ml-48-vm0" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="cHI-VU-XPV"/>
+                            <constraint firstItem="t48-tV-xei" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="foN-BJ-Gfw"/>
+                            <constraint firstItem="5ml-48-vm0" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="0.25" id="jRP-AP-j8A"/>
+                            <constraint firstItem="t48-tV-xei" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="knC-Es-QI5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="t48-tV-xei" secondAttribute="trailing" id="t39-s1-xss"/>
+                            <constraint firstItem="Y3M-EI-buw" firstAttribute="top" secondItem="8Os-FH-eLC" secondAttribute="bottom" constant="24" id="tF5-Xb-tN2"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Y3M-EI-buw" secondAttribute="trailing" constant="16" id="yko-wk-7AN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playerBirthDate" destination="z3K-Vs-lPW" id="7EB-Xb-TSr"/>
+                        <outlet property="playerCountry" destination="L4a-an-CzC" id="M5f-in-yeg"/>
+                        <outlet property="playerImage" destination="UKe-7M-u39" id="G7V-ld-QCU"/>
+                        <outlet property="playerName" destination="tRu-Wf-0tX" id="skj-26-GcS"/>
+                        <outlet property="statsTournamentsSegment" destination="Y3M-EI-buw" id="E5i-AQ-i47"/>
+                        <outlet property="tableView" destination="t48-tV-xei" id="7MY-z1-foH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.1679389312977" y="130.98591549295776"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AppBackground">
+            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="1" green="0.31400001049041748" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

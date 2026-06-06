@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qDa-jc-5OT">
-                                <rect key="frame" x="0.0" y="167" width="393" height="685"/>
+                                <rect key="frame" x="0.0" y="167" width="393" height="617"/>
                                 <color key="backgroundColor" name="AppBackground"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eKa-4s-zm7">
                                     <size key="itemSize" width="128" height="128"/>
@@ -66,7 +66,7 @@
                         <color key="backgroundColor" name="AppBackground"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Xt6-ga-uog" secondAttribute="trailing" constant="16" id="Ual-si-vmJ"/>
-                            <constraint firstAttribute="bottom" secondItem="qDa-jc-5OT" secondAttribute="bottom" id="dXc-YE-L4K"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="qDa-jc-5OT" secondAttribute="bottom" id="dXc-YE-L4K"/>
                             <constraint firstItem="srB-yd-nQ6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="eSK-Fl-bXP"/>
                             <constraint firstItem="qDa-jc-5OT" firstAttribute="top" secondItem="srB-yd-nQ6" secondAttribute="bottom" constant="16" id="gWd-g1-XvU"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qDa-jc-5OT" secondAttribute="trailing" id="rDY-S0-gO2"/>

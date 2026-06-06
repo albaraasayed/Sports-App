@@ -9,7 +9,13 @@ import Foundation
 import CoreData
 import UIKit
 
-class CoreDataManager {
+protocol CoreDataManagerProtocol: AnyObject {
+    func saveLeague(leagueId: String, name: String, logoUrl: String, logoData: Data?, country: String, sportType: String)
+    func deleteLeague(leagueId: String)
+    func fetchFavorites() -> [FavoriteEntity]
+}
+
+class CoreDataManager : CoreDataManagerProtocol {
     static let shared = CoreDataManager()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     

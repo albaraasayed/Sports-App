@@ -154,6 +154,22 @@ class LeagueDetailsVC: UIViewController {
         section.boundarySupplementaryItems = [createHeader()]
         return section
     }
+    
+    
+    private func getPlaceholder(for sport: SportType?) -> UIImage {
+        switch sport {
+        case .basketball:
+            return UIImage(named: "Basketball Placeholder") ?? UIImage(named: "image-placeholder")!
+        case .football:
+            return UIImage(named: "Football Placeholder") ?? UIImage(named: "image-placeholder")!
+        case .cricket:
+            return UIImage(named: "Cricket Placeholder") ?? UIImage(named: "image-placeholder")!
+        case .tennis:
+            return UIImage(named: "Tennis Placeholder") ?? UIImage(named: "image-placeholder")!
+        default:
+            return UIImage(named: "image-placeholder")!
+        }
+    }
 }
 
 extension LeagueDetailsVC: LeagueDetailsVCProtocol {
@@ -192,67 +208,34 @@ extension LeagueDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let placeholder = UIImage(named: "image-placeholder")
+        
+        let placeholderImage = getPlaceholder(for: sportType)
         
         switch indexPath.section {
         case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.teamsCell, for: indexPath) as? TeamsCell else { return UICollectionViewCell() }
-            if sportType == .tennis {
-                let player = tennisPlayers[indexPath.row]
-                cell.teamNameLabel.text = player.playerName ?? "Unknown Player"
-                
-                if let logoString = player.playerLogo, let url = URL(string: logoString) {
-                    cell.imageView.sd_setImage(with: url, placeholderImage: placeholder)
-                } else {
-                    cell.imageView.image = placeholder
-                }
+            if let logoString = (sportType == .tennis ? tennisPlayers[indexPath.row].playerLogo : teams[indexPath.row].teamLogo),
+               let url = URL(string: logoString) {
+                cell.imageView.sd_setImage(with: url, placeholderImage: placeholderImage)
             } else {
-                let team = teams[indexPath.row]
-                cell.teamNameLabel.text = team.teamName ?? "Unknown Team"
-                
-                if let logoString = team.teamLogo, let url = URL(string: logoString) {
-                    cell.imageView.sd_setImage(with: url, placeholderImage: placeholder)
-                } else {
-                    cell.imageView.image = placeholder
-                }
+                cell.imageView.image = placeholderImage
             }
             return cell
             
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.upcomingCell, for: indexPath) as? UpcomingCell else { return UICollectionViewCell() }
             let match = upcomingMatches[indexPath.row]
-            cell.team1Label.text = match.homeName ?? "TBD"
-            cell.team2Label.text = match.awayName ?? "TBD"
-            cell.time.text = match.eventTime ?? ""
-            cell.date.text = match.date ?? ""
-            cell.leagueRound.text = match.leagueRound ?? ""
-            
-            if let urlStr = match.homeLogo, let url = URL(string: urlStr) { cell.team1Image.sd_setImage(with: url, placeholderImage: placeholder) }
-            if let urlStr = match.awayLogo, let url = URL(string: urlStr) { cell.team2Image.sd_setImage(with: url, placeholderImage: placeholder) }
-            if let urlStr = match.leagueLogo, let url = URL(string: urlStr) { cell.leagueImage.sd_setImage(with: url, placeholderImage: placeholder) }
+            cell.team1Image.sd_setImage(with: URL(string: match.homeLogo ?? ""), placeholderImage: placeholderImage)
+            cell.team2Image.sd_setImage(with: URL(string: match.awayLogo ?? ""), placeholderImage: placeholderImage)
+            cell.leagueImage.sd_setImage(with: URL(string: match.leagueLogo ?? ""), placeholderImage: placeholderImage)
             return cell
             
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.resultMatchCell, for: indexPath) as? ResultMatchCell else { return UICollectionViewCell() }
             let match = pastMatches[indexPath.row]
-            cell.team1Label.text = match.homeName ?? "TBD"
-            cell.team2Label.text = match.awayName ?? "TBD"
-            cell.leagueRound.text = match.leagueRound ?? ""
-            cell.eventStadium.text = match.eventStadium ?? ""
-            
-            let resultString = match.eventFinalResult ?? "-"
-            let scores = resultString.components(separatedBy: " - ")
-            if scores.count == 2 {
-                cell.team1Result.text = scores[0]
-                cell.team2Result.text = scores[1]
-            } else {
-                cell.team1Result.text = resultString
-                cell.team2Result.text = "-"
-            }
-            
-            if let urlStr = match.homeLogo, let url = URL(string: urlStr) { cell.team1Image.sd_setImage(with: url, placeholderImage: placeholder) }
-            if let urlStr = match.awayLogo, let url = URL(string: urlStr) { cell.team2Image.sd_setImage(with: url, placeholderImage: placeholder) }
-            if let urlStr = match.leagueLogo, let url = URL(string: urlStr) { cell.leagueLogo.sd_setImage(with: url, placeholderImage: placeholder) }
+            cell.team1Image.sd_setImage(with: URL(string: match.homeLogo ?? ""), placeholderImage: placeholderImage)
+            cell.team2Image.sd_setImage(with: URL(string: match.awayLogo ?? ""), placeholderImage: placeholderImage)
+            cell.leagueLogo.sd_setImage(with: URL(string: match.leagueLogo ?? ""), placeholderImage: placeholderImage)
             return cell
             
         default:
@@ -275,15 +258,29 @@ extension LeagueDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            let sb = UIStoryboard(name: Constants.teamDetailsVC, bundle: nil)
-            
             if sportType == .football {
+                let sb = UIStoryboard(name: Constants.teamDetailsVC, bundle: nil)
                 let selectedTeam = teams[indexPath.row]
                 guard let id = selectedTeam.teamKey, let currentSport = sportType else { return }
                 
                 NetworkConnection.shared.isOnline(on: self) {
                     let vc: TeamDetailsVC = sb.instantiateViewController(identifier: Constants.teamDetailsVC, creator: { coder in
                         return TeamDetailsVC(coder: coder, sportType: currentSport, teamId: id)
+                    })
+                    
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                
+            } else if sportType == .tennis {
+                let sb = UIStoryboard(name: Constants.tennisPlayerDetialsVC, bundle: nil)
+                let selectedPlayer = tennisPlayers[indexPath.row]
+                
+                guard let id = selectedPlayer.playerKey else { return }
+                let playerIdString = "\(id)"
+                
+                NetworkConnection.shared.isOnline(on: self) {
+                    let vc: TennisPlayerDetailsVC = sb.instantiateViewController(identifier: Constants.tennisPlayerDetialsVC, creator: { coder in
+                        return TennisPlayerDetailsVC(coder: coder, playerId: playerIdString)
                     })
                     
                     self.navigationController?.pushViewController(vc, animated: true)

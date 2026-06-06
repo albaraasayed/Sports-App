@@ -79,16 +79,16 @@ extension HomeVC: UICollectionViewDataSource {
         switch currentSport {
         case .football:
             cell.image.image = UIImage(named: "football")
-            cell.sportLabel.text = "Football"
+            cell.sportLabel.text = NSLocalizedString("Football", comment: "")
         case .basketball:
             cell.image.image = UIImage(named: "basketball")
-            cell.sportLabel.text = "Basketball"
+            cell.sportLabel.text = NSLocalizedString("Basketball", comment: "")
         case .cricket:
             cell.image.image = UIImage(named: "cricket")
-            cell.sportLabel.text = "Cricket"
+            cell.sportLabel.text = NSLocalizedString("Cricket", comment: "")
         case .tennis:
             cell.image.image = UIImage(named: "tennis")
-            cell.sportLabel.text = "Tennis"
+            cell.sportLabel.text = NSLocalizedString("Tennis", comment: "")
         }
         return cell
     }

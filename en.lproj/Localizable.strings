@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  SportsApp
+
+  Created by albaraa alsayed on 20/12/1447 AH.
+  
+*/
+
+"Football" = "Football";
+"Basketball" = "Basketball";
+"Cricket" = "Cricket";
+"Tennis" = "Tennis";

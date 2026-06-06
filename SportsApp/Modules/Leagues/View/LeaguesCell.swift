@@ -20,6 +20,7 @@ class LeaguesCell: UITableViewCell {
     @IBOutlet weak var sportNameLabel: UILabel!
     
     weak var delegate: LeagueCellDelegate?
+    
     private var isFavoriteState: Bool = false
     
     override func layoutSubviews() {
@@ -41,19 +42,25 @@ class LeaguesCell: UITableViewCell {
         updateStarIcon()
     }
     
-    func setNetworkImage(from urlString: String) {
+    func setNetworkImage(from urlString: String, placeholder: UIImage? = UIImage(named: "image-placeholder")) {
         if let url = URL(string: urlString) {
-            leagueImage.sd_setImage(with: url, placeholderImage: UIImage(named: "image-placeholder"))
+            leagueImage.sd_setImage(with: url, placeholderImage: placeholder)
         } else {
-            leagueImage.image = UIImage(named: "image-placeholder")
+            leagueImage.image = placeholder
         }
     }
     
-    func setLocalImage(from data: Data?) {
+    func setLocalImage(from data: Data?, sportType: SportType) {
         if let imageData = data, let image = UIImage(data: imageData) {
             leagueImage.image = image
         } else {
-            leagueImage.image = UIImage(named: "image-placeholder")
+            switch sportType {
+            case .basketball: leagueImage.image = UIImage(named: "Basketball Placeholder")!
+            case .football : leagueImage.image = UIImage(named: "Football Placeholder")!
+            case .cricket : leagueImage.image = UIImage(named: "Cricket Placeholder")!
+            default: leagueImage.image = UIImage(named: "Tennis Placeholder")!
+            }
+            
         }
     }
     
