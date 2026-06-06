@@ -72,7 +72,7 @@ class TeamDetailsVC: UIViewController {
             circle.layer.borderColor = UIColor.white.cgColor
         }
         
-        self.title = "Team Details"
+        self.title = String(localized: "Team Details")
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
     

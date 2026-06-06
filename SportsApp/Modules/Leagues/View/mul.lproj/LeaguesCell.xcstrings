@@ -1,0 +1,42 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "gGS-zt-0Rr.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"LeagueLabel\"; ObjectID = \"gGS-zt-0Rr\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "LeagueLabel"
+          }
+        }
+      }
+    },
+    "sDU-WJ-zjs.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"SportName\"; ObjectID = \"sDU-WJ-zjs\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "SportName"
+          }
+        }
+      }
+    },
+    "SLh-fn-qok.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"Button\"; ObjectID = \"SLh-fn-qok\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Button"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.2"
+}

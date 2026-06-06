@@ -1,0 +1,60 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "9kK-oN-jes.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Leagues\"; ObjectID = \"9kK-oN-jes\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الدوريات"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Leagues"
+          }
+        }
+      }
+    },
+    "GnW-Dx-U0h.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Get news, game updates highlights and more info on your favorite teams\"; ObjectID = \"GnW-Dx-U0h\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "احصل على الأخبار، وتحديثات المباريات، والملخصات، والمزيد من المعلومات حول فرقك المفضلة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get news, game updates highlights and more info on your favorite teams"
+          }
+        }
+      }
+    },
+    "HBV-Wp-7Na.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Follow your favorite league\"; ObjectID = \"HBV-Wp-7Na\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تابع الدوري المفضل لك"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Follow your favorite league"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.2"
+}

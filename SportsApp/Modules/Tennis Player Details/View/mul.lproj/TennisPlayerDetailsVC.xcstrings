@@ -1,0 +1,120 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "EsF-7l-Etu.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Player Berth Date\"; ObjectID = \"EsF-7l-Etu\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تاريخ الميلاد"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Player Berth Date"
+          }
+        }
+      }
+    },
+    "L4a-an-CzC.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"EGYPT\"; ObjectID = \"L4a-an-CzC\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EGYPT"
+          }
+        }
+      }
+    },
+    "q9k-Jc-MLk.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Player Country\"; ObjectID = \"q9k-Jc-MLk\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بلد اللاعب"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Player Country"
+          }
+        }
+      }
+    },
+    "tRu-Wf-0tX.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Player Name\"; ObjectID = \"tRu-Wf-0tX\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اسم اللاعب"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Player Name"
+          }
+        }
+      }
+    },
+    "Y3M-EI-buw.segmentTitles[0]" : {
+      "comment" : "Class = \"UISegmentedControl\"; Y3M-EI-buw.segmentTitles[0] = \"Stats\"; ObjectID = \"Y3M-EI-buw\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الإحصائيات"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Stats"
+          }
+        }
+      }
+    },
+    "Y3M-EI-buw.segmentTitles[1]" : {
+      "comment" : "Class = \"UISegmentedControl\"; Y3M-EI-buw.segmentTitles[1] = \"Tournaments\"; ObjectID = \"Y3M-EI-buw\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بطولة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tournaments"
+          }
+        }
+      }
+    },
+    "z3K-Vs-lPW.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"18/9/1995\"; ObjectID = \"z3K-Vs-lPW\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "18/9/1995"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.2"
+}

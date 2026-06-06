@@ -23,7 +23,7 @@ final class NetworkConnection {
                 if path.status == .satisfied {
                     action()
                 } else {
-                    AlertManager.showNoInternetAlert(on: viewController, title: "No Internet Connection", message: "Please check your Wi-Fi or Cellular network and try again.")
+                    AlertManager.showNoInternetAlert(on: viewController, title: String(localized: "No Internet Connection"), message: String(localized: "Please check your Wi-Fi or Cellular network and try again."))
                 }
                 monitor.cancel()
             }

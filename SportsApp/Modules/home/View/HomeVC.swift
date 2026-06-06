@@ -88,7 +88,7 @@ extension HomeVC: UICollectionViewDataSource {
             cell.sportLabel.text = NSLocalizedString("Cricket", comment: "")
         case .tennis:
             cell.image.image = UIImage(named: "tennis")
-            cell.sportLabel.text = NSLocalizedString("Tennis", comment: "")
+            cell.sportLabel.text = String(localized:"Tennis", comment: "")
         }
         return cell
     }

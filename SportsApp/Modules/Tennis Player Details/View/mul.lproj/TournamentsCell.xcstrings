@@ -1,0 +1,138 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "53p-t8-byF.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Tournament Name\"; ObjectID = \"53p-t8-byF\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tournament Name"
+          }
+        }
+      }
+    },
+    "dfH-Jd-Nj9.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Surface\"; ObjectID = \"dfH-Jd-Nj9\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الأرضية"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Surface"
+          }
+        }
+      }
+    },
+    "Eyu-ZQ-FhT.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"2025\"; ObjectID = \"Eyu-ZQ-FhT\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "2025"
+          }
+        }
+      }
+    },
+    "GDh-sG-KLh.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Prize\"; ObjectID = \"GDh-sG-KLh\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الجائزة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Prize"
+          }
+        }
+      }
+    },
+    "gdo-he-Ktc.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Double\"; ObjectID = \"gdo-he-Ktc\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Double"
+          }
+        }
+      }
+    },
+    "mp4-kB-6Op.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Type\"; ObjectID = \"mp4-kB-6Op\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "النوع"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Type"
+          }
+        }
+      }
+    },
+    "pgh-Xe-lmz.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Season\"; ObjectID = \"pgh-Xe-lmz\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الموسم"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Season"
+          }
+        }
+      }
+    },
+    "pSV-23-uVY.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"99\"; ObjectID = \"pSV-23-uVY\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "99"
+          }
+        }
+      }
+    },
+    "yz8-Vt-SRP.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"158\"; ObjectID = \"yz8-Vt-SRP\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "158"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.2"
+}

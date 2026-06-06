@@ -1,0 +1,72 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "M64-wC-Cks.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Watch sports live or highlights, read every news from your smartphone\"; ObjectID = \"M64-wC-Cks\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "شاهد البث المباشر للأحداث الرياضية أو ملخصاتها، واقرأ جميع الأخبار من هاتفك الذكي."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Watch sports live or highlights, read every news from your smartphone"
+          }
+        }
+      }
+    },
+    "Sit-uH-c7z.configuration.title" : {
+      "comment" : "Class = \"UIButton\"; configuration.title = \"Start\"; ObjectID = \"Sit-uH-c7z\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ابدأ الآن"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Start"
+          }
+        }
+      }
+    },
+    "Sit-uH-c7z.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"Button\"; ObjectID = \"Sit-uH-c7z\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Button"
+          }
+        }
+      }
+    },
+    "vaO-2t-hi9.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"keep an eye on the stadium\"; ObjectID = \"vaO-2t-hi9\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "راقب الملعب من قرب"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "keep an eye on the stadium"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.2"
+}

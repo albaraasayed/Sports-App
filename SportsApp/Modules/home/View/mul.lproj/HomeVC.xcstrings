@@ -1,0 +1,150 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Bby-YW-xGH.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Favorites\"; ObjectID = \"Bby-YW-xGH\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المفضلة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Favorites"
+          }
+        }
+      }
+    },
+    "d2u-If-DV8.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Get news, game updates highlights and more info on your favorite teams\"; ObjectID = \"d2u-If-DV8\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "احصل على الأخبار، وتحديثات المباريات، والملخصات، والمزيد من المعلومات حول فرقك المفضلة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Get news, game updates highlights and more info on your favorite teams"
+          }
+        }
+      }
+    },
+    "ezA-Wq-6dj.title" : {
+      "comment" : "Class = \"UIBarButtonItem\"; title = \"Light Theme\"; ObjectID = \"ezA-Wq-6dj\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "النمط الصباحي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Light Theme"
+          }
+        }
+      }
+    },
+    "fbv-lJ-qKO.title" : {
+      "comment" : "Class = \"UITabBarItem\"; title = \"Sports\"; ObjectID = \"fbv-lJ-qKO\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "رياضات"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sports"
+          }
+        }
+      }
+    },
+    "mhd-0W-sWO.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Follow your favorite league\"; ObjectID = \"mhd-0W-sWO\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تابع فريقك المفضل"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Follow your favorite league"
+          }
+        }
+      }
+    },
+    "tis-fK-qQe.title" : {
+      "comment" : "Class = \"UIBarButtonItem\"; title = \"Dark Theme\"; ObjectID = \"tis-fK-qQe\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "النمط الداكن"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Dark Theme"
+          }
+        }
+      }
+    },
+    "uaY-uX-mxJ.title" : {
+      "comment" : "Class = \"UIBarButtonItem\"; title = \"EN\"; ObjectID = \"uaY-uX-mxJ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عربي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "EN"
+          }
+        }
+      }
+    },
+    "uHE-Mu-haV.title" : {
+      "comment" : "Class = \"UITabBarItem\"; title = \"Favorites\"; ObjectID = \"uHE-Mu-haV\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المفضلة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Favorites"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.2"
+}

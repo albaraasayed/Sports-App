@@ -250,6 +250,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="AppBackground"/>
             <connections>
                 <outlet property="clayLostLabel" destination="BYn-VF-y82" id="V7r-8s-7CL"/>
                 <outlet property="clayWonLabel" destination="1SJ-7L-RYE" id="nCd-kt-eK9"/>
@@ -268,6 +269,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="AppBackground">
+            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Primary">
             <color red="1" green="0.31400001049041748" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

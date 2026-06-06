@@ -1,0 +1,36 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "3fy-Qc-QLu.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Tap to explore\"; ObjectID = \"3fy-Qc-QLu\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر للاستكشاف"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tap to explore"
+          }
+        }
+      }
+    },
+    "lyj-CB-L8R.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Football\"; ObjectID = \"lyj-CB-L8R\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Football"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.2"
+}

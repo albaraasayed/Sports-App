@@ -1,0 +1,210 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "7le-sh-kIs.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"18\"; ObjectID = \"7le-sh-kIs\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "18"
+          }
+        }
+      }
+    },
+    "8TO-eZ-thC.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"3\"; ObjectID = \"8TO-eZ-thC\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "3"
+          }
+        }
+      }
+    },
+    "8yp-1R-a3y.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Match Played\"; ObjectID = \"8yp-1R-a3y\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المباريات الملعوبة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Match Played"
+          }
+        }
+      }
+    },
+    "89m-3j-5H4.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Player Country\"; ObjectID = \"89m-3j-5H4\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بلد اللاعب"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Player Country"
+          }
+        }
+      }
+    },
+    "dPk-Jk-FxD.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"25\"; ObjectID = \"dPk-Jk-FxD\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "25"
+          }
+        }
+      }
+    },
+    "fNg-om-QBo.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"8.9\"; ObjectID = \"fNg-om-QBo\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "8.9"
+          }
+        }
+      }
+    },
+    "FQY-YW-h50.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"KARIM BENZEMA\"; ObjectID = \"FQY-YW-h50\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "KARIM BENZEMA"
+          }
+        }
+      }
+    },
+    "JE0-Aa-2NR.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"1\"; ObjectID = \"JE0-Aa-2NR\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "1"
+          }
+        }
+      }
+    },
+    "QDF-NL-vD1.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Red Cards\"; ObjectID = \"QDF-NL-vD1\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الكروت الحمراء"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Red Cards"
+          }
+        }
+      }
+    },
+    "R2q-9r-oHy.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"total Goals\"; ObjectID = \"R2q-9r-oHy\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إجمالى الأهداف"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "total Goals"
+          }
+        }
+      }
+    },
+    "sd7-7z-zmd.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"259\"; ObjectID = \"sd7-7z-zmd\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "259"
+          }
+        }
+      }
+    },
+    "U1C-Nk-gDz.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Yellow Cards\"; ObjectID = \"U1C-Nk-gDz\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الكروت الصفراء"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Yellow Cards"
+          }
+        }
+      }
+    },
+    "uW7-Gl-nbA.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"10\"; ObjectID = \"uW7-Gl-nbA\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "10"
+          }
+        }
+      }
+    },
+    "vth-A3-fFd.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Player Age\"; ObjectID = \"vth-A3-fFd\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عمر اللاعب"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Player Age"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.2"
+}

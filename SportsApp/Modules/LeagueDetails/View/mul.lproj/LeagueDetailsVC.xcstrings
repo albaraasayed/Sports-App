@@ -1,0 +1,36 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "fLT-CZ-1gh.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Premier League\"; ObjectID = \"fLT-CZ-1gh\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Premier League"
+          }
+        }
+      }
+    },
+    "srB-yd-nQ6.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Matches\"; ObjectID = \"srB-yd-nQ6\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المباريات"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Matches"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.2"
+}

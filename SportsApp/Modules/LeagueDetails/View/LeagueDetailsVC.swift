@@ -248,9 +248,9 @@ extension LeagueDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate 
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeaderView.identifier, for: indexPath) as! SectionHeaderView
         
         if indexPath.section == 1 {
-            header.dateLabel.text = upcomingMatches.isEmpty ? "No Upcoming Matches" : "Upcoming Matches"
+            header.dateLabel.text = upcomingMatches.isEmpty ? String(localized: "No Upcoming Matches") : String(localized: "Upcoming Matches")
         } else if indexPath.section == 2 {
-            header.dateLabel.text = pastMatches.isEmpty ? "No Recent Results" : "Latest Results"
+            header.dateLabel.text = pastMatches.isEmpty ? String(localized: "No Recent Results") : String(localized: "Recent Results")
         }
         return header
     }
@@ -285,6 +285,8 @@ extension LeagueDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate 
                     
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
+            } else {
+                AlertManager.showNoInternetAlert(on: self, title: String(localized: "Comming Soon"), message: String(localized: "This Feature is not available."))
             }
             
         default: return

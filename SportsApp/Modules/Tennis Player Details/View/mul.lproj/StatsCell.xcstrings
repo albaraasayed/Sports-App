@@ -1,0 +1,330 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "1SJ-7L-RYE.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"98\"; ObjectID = \"1SJ-7L-RYE\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "98"
+          }
+        }
+      }
+    },
+    "2gx-xE-fO2.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Title\"; ObjectID = \"2gx-xE-fO2\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الألقاب"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Title"
+          }
+        }
+      }
+    },
+    "aGC-6P-kLv.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Match\"; ObjectID = \"aGC-6P-kLv\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مباريات"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Match"
+          }
+        }
+      }
+    },
+    "b3M-fG-Hau.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Wins\"; ObjectID = \"b3M-fG-Hau\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فوز"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Wins"
+          }
+        }
+      }
+    },
+    "BYn-VF-y82.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"99\"; ObjectID = \"BYn-VF-y82\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "99"
+          }
+        }
+      }
+    },
+    "cre-el-hCt.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Clay surface\"; ObjectID = \"cre-el-hCt\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أرض طينية"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Clay surface"
+          }
+        }
+      }
+    },
+    "dFH-Jx-6ux.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Type\"; ObjectID = \"dFH-Jx-6ux\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نوع المباراة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Type"
+          }
+        }
+      }
+    },
+    "EiH-Gk-4eM.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"99\"; ObjectID = \"EiH-Gk-4eM\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "99"
+          }
+        }
+      }
+    },
+    "eli-jx-sKE.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"100\"; ObjectID = \"eli-jx-sKE\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "100"
+          }
+        }
+      }
+    },
+    "hDR-zK-doX.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"77\"; ObjectID = \"hDR-zK-doX\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "77"
+          }
+        }
+      }
+    },
+    "IZE-nK-csx.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Season\"; ObjectID = \"IZE-nK-csx\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الموسم"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Season"
+          }
+        }
+      }
+    },
+    "KcJ-2i-N2K.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"2025\"; ObjectID = \"KcJ-2i-N2K\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "2025"
+          }
+        }
+      }
+    },
+    "noW-Sa-abp.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Losses\"; ObjectID = \"noW-Sa-abp\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خسارة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Losses"
+          }
+        }
+      }
+    },
+    "PaO-gl-8ip.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"20\"; ObjectID = \"PaO-gl-8ip\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "20"
+          }
+        }
+      }
+    },
+    "PMo-u7-pdY.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Hard surface\"; ObjectID = \"PMo-u7-pdY\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أرض صلبة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Hard surface"
+          }
+        }
+      }
+    },
+    "R6F-El-pHb.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Rank\"; ObjectID = \"R6F-El-pHb\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الترتيب"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Rank"
+          }
+        }
+      }
+    },
+    "vB5-qk-3y8.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"9\"; ObjectID = \"vB5-qk-3y8\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "9"
+          }
+        }
+      }
+    },
+    "Vh1-TX-pwp.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"158\"; ObjectID = \"Vh1-TX-pwp\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "158"
+          }
+        }
+      }
+    },
+    "vlS-0y-o1g.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Grass surface\"; ObjectID = \"vlS-0y-o1g\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أرض عشبية"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Grass surface"
+          }
+        }
+      }
+    },
+    "Yhe-Di-NYx.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Double\"; ObjectID = \"Yhe-Di-NYx\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Double"
+          }
+        }
+      }
+    },
+    "Yql-Bu-Icx.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"18\"; ObjectID = \"Yql-Bu-Icx\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "18"
+          }
+        }
+      }
+    },
+    "ZlC-nH-TEH.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"23\"; ObjectID = \"ZlC-nH-TEH\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "23"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.2"
+}
