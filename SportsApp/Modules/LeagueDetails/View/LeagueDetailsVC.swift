@@ -58,8 +58,9 @@ class LeagueDetailsVC: UIViewController {
         setupUI()
         leagueNameLabel.text = leagueName
         
-        if let currentSport = self.sportType, let currentLeagueId = self.leagueId {
-            self.presenter = LeagueDetailsPresenter(view: self, sportType: currentSport, leagueId: currentLeagueId)
+        
+        if let currentSport = self.sportType, let currentLeagueId = self.leagueId, let currentLeagueName = self.leagueName {
+            self.presenter = LeagueDetailsPresenter(view: self, sportType: currentSport, leagueId: currentLeagueId, leagueName: currentLeagueName)
             self.presenter?.viewDidLoad()
         }
     }

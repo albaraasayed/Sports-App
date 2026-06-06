@@ -7,31 +7,43 @@
 
 import Foundation
 
-
 protocol UserDefaultsManagerProtocol {
     func disableOnboarding()
     func isOnboardingDisabled() -> Bool
     func changeLanguage(to language: String)
     func changeTheme(to theme: String)
+    func getTheme() -> String?
 }
 
-class UserDefaultsManager : UserDefaultsManagerProtocol {
+class UserDefaultsManager: UserDefaultsManagerProtocol {
     
-    let userDefaults: UserDefaults = .standard
-    private init(){}
+    static let shared = UserDefaultsManager()
+    
+    private let userDefaults: UserDefaults = .standard
+    
+    private let onboardingKey = "hasSeenOnboarding"
+    private let languageKey = "appLanguage"
+    private let themeKey = "AppTheme"
+    
+    private init() {}
+    
     func disableOnboarding() {
-        
+        userDefaults.set(true, forKey: onboardingKey)
     }
     
     func isOnboardingDisabled() -> Bool {
-        return false
+        return userDefaults.bool(forKey: onboardingKey)
     }
     
     func changeLanguage(to language: String) {
-        
+        userDefaults.set(language, forKey: languageKey)
     }
     
     func changeTheme(to theme: String) {
-        
+        userDefaults.set(theme, forKey: themeKey)
+    }
+    
+    func getTheme() -> String? {
+        return userDefaults.string(forKey: themeKey)
     }
 }

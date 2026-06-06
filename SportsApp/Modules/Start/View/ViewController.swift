@@ -21,7 +21,15 @@ class ViewController: UIViewController {
         let sb = UIStoryboard(name: Constants.homeVC, bundle: nil)
         let tabBarVC = sb.instantiateViewController(withIdentifier: Constants.mainTabBarController)
         
-        self.navigationController?.pushViewController(tabBarVC, animated: true)
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window = windowScene.windows.first else {
+            return
+        }
+        
+        window.rootViewController = tabBarVC
+        window.makeKeyAndVisible()
+        
+        UIView.transition(with: window, duration: 0.4, options: .transitionCrossDissolve, animations: nil, completion: nil)
     }
     
 }

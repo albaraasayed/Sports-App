@@ -83,32 +83,27 @@ extension LeaguesVC: UITableViewDataSource, UITableViewDelegate {
         return leaguesArray.count
     }
     
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.leaguesCell, for: indexPath) as? LeaguesCell else {
             return UITableViewCell()
         }
         
         let currentLeague = leaguesArray[indexPath.row]
-        let name = currentLeague.leagueName ?? "Unknown League"
-        let logoURLString = currentLeague.leagueLogo ?? ""
+        let leagueId = "\(currentLeague.leagueKey ?? "0")"
+        let isFav = leaguePresenter?.isFavorite(leagueId: leagueId) ?? false
         
-        cell.leagueLabel.text = name
-        
-        if let imageURL = URL(string: logoURLString), !logoURLString.isEmpty {
-            cell.leagueImage.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "image-placeholder"))
+        let subtitleText: String
+        if sportType == .cricket {
+            subtitleText = currentLeague.leagueYear ?? "Year"
         } else {
-            cell.leagueImage.image = UIImage(named: "image-placeholder")
+            subtitleText = currentLeague.countryName ?? "Country"
         }
         
-        switch sportType {
-        case .football, .basketball, .tennis:
-            cell.sportNameLabel.text = currentLeague.countryName ?? "Unknown Country"
-        case .cricket:
-            cell.sportNameLabel.text = currentLeague.leagueYear ?? "Unknown Year"
-        default:
-            cell.sportNameLabel.text = ""
-        }
+        cell.configureBasicInfo(name: currentLeague.leagueName ?? "League", subtitle: subtitleText, isFavorite: isFav)
+        cell.setNetworkImage(from: currentLeague.leagueLogo ?? "")
         
+        cell.delegate = self
         return cell
     }
     
@@ -119,8 +114,8 @@ extension LeaguesVC: UITableViewDataSource, UITableViewDelegate {
         guard let currentSport = sportType, let selectedLeagueId = currentLeague.leagueKey, let selectedLeagueName = currentLeague.leagueName else { return }
         
         NetworkConnection.shared.isOnline(on: self) {
-            let sb = UIStoryboard(name: Constants.LeagueDetailsVC, bundle: nil)
-            let vc: LeagueDetailsVC = sb.instantiateViewController(identifier: Constants.LeagueDetailsVC, creator: { coder in
+            let sb = UIStoryboard(name: Constants.leagueDetailsVC, bundle: nil)
+            let vc: LeagueDetailsVC = sb.instantiateViewController(identifier: Constants.leagueDetailsVC, creator: { coder in
                 return LeagueDetailsVC(coder: coder, sportType: currentSport, leagueId: selectedLeagueId, leagueName: selectedLeagueName)
             })
             
@@ -132,6 +127,19 @@ extension LeaguesVC: UITableViewDataSource, UITableViewDelegate {
         return 90
     }
 }
+
+
+
+extension LeaguesVC: LeagueCellDelegate {
+    func didTapFavoriteButton(on cell: LeaguesCell, isFavoriteNow : Bool) {
+        
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        let selectedLeague = leaguesArray[indexPath.row]
+        
+        leaguePresenter?.toggleFavorite(league: selectedLeague, isNowFavorite: isFavoriteNow)
+    }
+}
+
 
 extension LeaguesVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

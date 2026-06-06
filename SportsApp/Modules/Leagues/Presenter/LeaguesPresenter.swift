@@ -6,15 +6,20 @@
 //
 
 import Foundation
+import SDWebImage 
 
 protocol LeaguesPresenterProtocol: AnyObject {
     func viewDidLoad()
     func didSelectLeague(at index: Int)
     func setSportType(sport: SportType)
     func searchLeagues(with query: String)
+    
+    func toggleFavorite(league: League, isNowFavorite: Bool)
+    func isFavorite(leagueId: String) -> Bool
 }
 
 class LeaguesPresenter: LeaguesPresenterProtocol {
+    
     weak var view: LeaguesViewProtocol?
     var sportType: SportType?
     
@@ -36,7 +41,7 @@ class LeaguesPresenter: LeaguesPresenterProtocol {
     private func fetchData() {
         guard let sportType = sportType else { return }
         view?.showLoading()
-
+        
         networkManager.fetchLeagues(sport: sportType) { [weak self] result in
             guard let self = self else { return }
             
@@ -70,5 +75,53 @@ class LeaguesPresenter: LeaguesPresenterProtocol {
     
     func setSportType(sport: SportType) {
         self.sportType = sport
+    }
+    
+    func isFavorite(leagueId: String) -> Bool {
+        return CoreDataManager.shared.isFavorite(leagueId: leagueId)
+    }
+    
+    func toggleFavorite(league: League, isNowFavorite: Bool) {
+        guard let id = league.leagueKey else { return }
+        let leagueId = "\(id)"
+        
+        if isNowFavorite {
+            let logoUrl = league.leagueLogo ?? ""
+            let name = league.leagueName ?? "Unknown"
+            let sportString = sportType?.rawValue ?? ""
+            
+            let countryOrYear: String
+            if sportType == .cricket {
+                countryOrYear = league.leagueYear ?? "Year"
+            } else {
+                countryOrYear = league.countryName ?? "Country"
+            }
+            
+            if let url = URL(string: logoUrl) {
+                SDWebImageManager.shared.loadImage(with: url, options: .highPriority, progress: nil) { (image, data, error, cacheType, finished, imageURL) in
+                    let imageDataToSave = data ?? image?.pngData()
+                    CoreDataManager.shared.saveLeague(
+                        leagueId: leagueId,
+                        name: name,
+                        logoUrl: logoUrl,
+                        logoData: imageDataToSave,
+                        country: countryOrYear,
+                        sportType: sportString
+                    )
+                }
+            } else {
+                CoreDataManager.shared.saveLeague(
+                    leagueId: leagueId,
+                    name: name,
+                    logoUrl: logoUrl,
+                    logoData: nil,
+                    country: countryOrYear,
+                    sportType: sportString
+                )
+            }
+            
+        } else {
+            CoreDataManager.shared.deleteLeague(leagueId: leagueId)
+        }
     }
 }

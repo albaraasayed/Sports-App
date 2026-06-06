@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="24837" systemVersion="25E253" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="24901" systemVersion="25F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CachedData" representedClassName="CachedData" syncable="YES" codeGenerationType="class">
         <attribute name="endpointType" optional="YES" attributeType="String"/>
         <attribute name="rawJSONData" optional="YES" attributeType="Binary"/>
         <attribute name="sportType" optional="YES" attributeType="String"/>
     </entity>
     <entity name="FavoriteEntity" representedClassName="FavoriteEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="country" optional="YES" attributeType="String"/>
         <attribute name="leagueId" optional="YES" attributeType="String"/>
         <attribute name="logo" optional="YES" attributeType="String"/>
+        <attribute name="logoData" optional="YES" attributeType="Binary"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="sportType" optional="YES" attributeType="String"/>
     </entity>

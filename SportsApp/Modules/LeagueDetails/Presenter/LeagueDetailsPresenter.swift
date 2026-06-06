@@ -25,26 +25,54 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
     
     var sportType: SportType?
     var leagueId: String?
+    var leagueName: String?
     
     var isFavorite: Bool = false
     
     let networkManager: NetworkManagerProtocol
     
-    init(view: LeagueDetailsVCProtocol, sportType: SportType, leagueId: String, networkManager: NetworkManagerProtocol = NetworkManager.shared) {
+    init(view: LeagueDetailsVCProtocol, sportType: SportType, leagueId: String, leagueName: String, networkManager: NetworkManagerProtocol = NetworkManager.shared) {
         self.view = view
         self.sportType = sportType
         self.leagueId = leagueId
+        self.leagueName = leagueName
         self.networkManager = networkManager
     }
     
     func viewDidLoad() {
+        
+        if let id = leagueId {
+            isFavorite = CoreDataManager.shared.isFavorite(leagueId: id)
+            view?.updateFavoriteButtonState(isFavorite: isFavorite)
+        }
+        
         fetchData()
     }
     
     func toggleFavorite() {
-        isFavorite.toggle()
-        view?.updateFavoriteButtonState(isFavorite: isFavorite)
-    }
+            
+            guard let id = leagueId, let sport = sportType, let name = leagueName else { return }
+            
+            let isCurrentlyFavorite = CoreDataManager.shared.isFavorite(leagueId: id)
+            
+            if isCurrentlyFavorite {
+                CoreDataManager.shared.deleteLeague(leagueId: id)
+                isFavorite = false
+            } else {
+                CoreDataManager.shared.saveLeague(
+                    leagueId: id,
+                    name: name,
+                    logoUrl: "",
+                    logoData: nil,
+                    country: "Unknown",
+                    sportType: sport.rawValue
+                )
+                isFavorite = true
+            }
+            
+            
+            view?.updateFavoriteButtonState(isFavorite: isFavorite)
+        }
     
     func didSelectTeam(teamId: Int) { }
     

@@ -11,6 +11,10 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var collection: UICollectionView!
     
+    @IBOutlet weak var languageBarButton: UIBarButtonItem!
+    var isEnglish: Bool = true
+    
+    
     let sportsList: [SportType] = [.football, .basketball, .cricket, .tennis]
     var sportType: SportType = .football
     
@@ -24,6 +28,37 @@ class HomeVC: UIViewController {
         collection.dataSource = self
         collection.register(UINib(nibName: "SportsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
     }
+    
+    
+    @IBAction func didTapLocalizationButton(_ sender: Any) {
+        if isEnglish {
+            isEnglish.toggle()
+            languageBarButton.title = "عربي"
+        }
+        else{
+            isEnglish.toggle()
+            languageBarButton.title = "EN"
+        }
+    }
+    
+    @IBAction func didTapDarkTheme(_ sender: Any) {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            windowScene.windows.forEach { window in
+                window.overrideUserInterfaceStyle = .dark
+            }
+        }
+        UserDefaultsManager.shared.changeTheme(to: "dark")
+    }
+    
+    @IBAction func didTapLightTheme(_ sender: Any) {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            windowScene.windows.forEach { window in
+                window.overrideUserInterfaceStyle = .light
+            }
+        }
+        UserDefaultsManager.shared.changeTheme(to: "light")
+    }
+    
 }
 
 extension HomeVC: UICollectionViewDataSource {
