@@ -132,7 +132,8 @@ We take reliability seriously. The app includes a comprehensive test suite targe
 ## 📱 Screenshots
 
 <p align="center">
-  <img src="https://via.placeholder.com/200x400.png?text=Home+Tab" alt="Home Screen" width="200"/>
+  <img src="<img width="878" height="1812" alt="image" src="https://github.com/user-attachments/assets/edbb269d-7939-4f5a-ad71-a2a1d1d0d93b" />
+" alt="Home Screen" width="200"/>
   &nbsp;&nbsp;&nbsp;
   <img src="https://via.placeholder.com/200x400.png?text=Leagues" alt="Leagues Screen" width="200"/>
   &nbsp;&nbsp;&nbsp;
