@@ -139,7 +139,7 @@ We take reliability seriously. The app includes a comprehensive test suite targe
   &nbsp;&nbsp;&nbsp;
   <img src="https://via.placeholder.com/200x400.png?text=League+Details" alt="League Details" width="200"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="https://via.placeholder.com/200x400.png?text=Favorites" alt="Favorites Screen" width="200"/>
+  <img width="495" height="780" alt="image" src="https://github.com/user-attachments/assets/113d5abf-fb85-4046-9704-345b5f419e44" />
 </p>
 
 *(Note: Replace placeholder images with actual app screenshots before publishing)*
