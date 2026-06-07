@@ -99,9 +99,9 @@ extension TennisPlayerDetailsVC: TennisPlayerDetailsViewProtocol {
     
     func loadPlayerDetails(tennisPlayer: TennisPlayer) {
         
-        playerName.text = tennisPlayer.playerName ?? "Unknown Player"
-        playerCountry.text = tennisPlayer.playerCountry ?? "Unknown Country"
-        playerBirthDate.text = tennisPlayer.playerBday ?? "Unknown Date"
+        playerName.text = tennisPlayer.playerName ?? "Player Name"
+        playerCountry.text = tennisPlayer.playerCountry ?? "Country Name"
+        playerBirthDate.text = tennisPlayer.playerBday ?? "Birth Date"
         
         if let imageString = tennisPlayer.playerLogo, let url = URL(string: imageString) {
             playerImage.sd_setImage(with: url, placeholderImage: UIImage(named: "player-placeholder"))

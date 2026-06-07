@@ -64,7 +64,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
                     name: name,
                     logoUrl: "",
                     logoData: nil,
-                    country: "Unknown",
+                    country: "Country name",
                     sportType: sport.rawValue
                 )
                 isFavorite = true

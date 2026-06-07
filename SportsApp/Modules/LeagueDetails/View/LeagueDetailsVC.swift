@@ -214,6 +214,8 @@ extension LeagueDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate 
         switch indexPath.section {
         case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.teamsCell, for: indexPath) as? TeamsCell else { return UICollectionViewCell() }
+            
+            cell.teamNameLabel.text = teams[indexPath.row].teamName
             if let logoString = (sportType == .tennis ? tennisPlayers[indexPath.row].playerLogo : teams[indexPath.row].teamLogo),
                let url = URL(string: logoString) {
                 cell.imageView.sd_setImage(with: url, placeholderImage: placeholderImage)
@@ -228,6 +230,13 @@ extension LeagueDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate 
             cell.team1Image.sd_setImage(with: URL(string: match.homeLogo ?? ""), placeholderImage: placeholderImage)
             cell.team2Image.sd_setImage(with: URL(string: match.awayLogo ?? ""), placeholderImage: placeholderImage)
             cell.leagueImage.sd_setImage(with: URL(string: match.leagueLogo ?? ""), placeholderImage: placeholderImage)
+            
+            cell.team1Label.text = match.homeName
+            cell.team2Label.text = match.awayName
+            cell.time.text = match.eventTime
+            cell.date.text = match.date
+            cell.leagueRound.text = match.leagueRound
+            
             return cell
             
         case 2:
@@ -236,6 +245,24 @@ extension LeagueDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate 
             cell.team1Image.sd_setImage(with: URL(string: match.homeLogo ?? ""), placeholderImage: placeholderImage)
             cell.team2Image.sd_setImage(with: URL(string: match.awayLogo ?? ""), placeholderImage: placeholderImage)
             cell.leagueLogo.sd_setImage(with: URL(string: match.leagueLogo ?? ""), placeholderImage: placeholderImage)
+            
+            
+            cell.team1Label.text = match.homeName
+            cell.team2Label.text = match.awayName
+            
+            let resultString = match.eventFinalResult ?? "-"
+            let results = resultString.components(separatedBy: " - ")
+            if results.count == 2 {
+                cell.team1Result.text = results[0].trimmingCharacters(in: .whitespaces)
+                cell.team2Result.text = results[1].trimmingCharacters(in: .whitespaces)
+            } else {
+                cell.team1Result.text = resultString
+                cell.team2Result.text = ""
+            }
+            
+            cell.leagueRound.text = match.leagueRound
+            cell.eventStadium.text = match.eventStadium
+            
             return cell
             
         default:

@@ -34,7 +34,7 @@ class TeamDetailsPresenter: TeamDetailsPresenterProtocol {
                 switch result {
                 case .success(let teams):
                     if let firstTeam = teams.first, let players = firstTeam.players {
-                        self.view?.loadPlayers(players: players, teamName: firstTeam.teamName ?? "Unknown Team")
+                        self.view?.loadPlayers(players: players, teamName: firstTeam.teamName ?? "Team Name")
                         
                     } else {
                         self.view?.showError(message: "No players found for this team.")

@@ -185,10 +185,10 @@ extension TeamDetailsVC: UICollectionViewDataSource {
         
         let player = players[indexPath.row]
         
-        cell.playerNameLabel.text = player.playerName ?? "Unknown Player"
+        cell.playerNameLabel.text = player.playerName ?? "Player Name"
         cell.playerNumber.text = player.playerNumber ?? "-"
         cell.playerAge.text = player.playerAge ?? "-"
-        cell.playerCountry.text = player.playerCountry ?? "Unknown"
+        cell.playerCountry.text = player.playerCountry ?? "Player Country"
         
         cell.matchPlayed.text = player.playerMatchPlayed ?? "0"
         cell.totalGoals.text = player.playerGoals ?? "0"

@@ -87,7 +87,7 @@ class LeaguesPresenter: LeaguesPresenterProtocol {
         
         if isNowFavorite {
             let logoUrl = league.leagueLogo ?? ""
-            let name = league.leagueName ?? "Unknown"
+            let name = league.leagueName ?? "League Name"
             let sportString = sportType?.rawValue ?? ""
             
             let countryOrYear: String

@@ -60,7 +60,7 @@ extension FavoriteVC: UITableViewDataSource {
         let countryString = fav.country?.capitalized ?? "Country"
         let formattedSubtitle = "\(sportString) / \(countryString)"
         
-        cell.configureBasicInfo(name: fav.name ?? "Unknown", subtitle: formattedSubtitle, isFavorite: true)
+        cell.configureBasicInfo(name: fav.name ?? "League Name", subtitle: formattedSubtitle, isFavorite: true)
         cell.setLocalImage(from: fav.logoData, sportType: SportType(rawValue: fav.sportType!) ?? .tennis)
         
         cell.delegate = self
