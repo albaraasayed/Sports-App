@@ -13,10 +13,18 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Onboarding ParentVC-->
+        <scene sceneID="OYi-hn-z8g">
+            <objects>
+                <pageViewController storyboardIdentifier="OnboardingParentVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="5fH-al-VIs" customClass="OnboardingParentVC" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TSj-Je-iLY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2002" y="-650"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="SportsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +46,7 @@
                                     <fontDescription key="titleFontDescription" name="BebasNeue" family="Bebas Neue" pointSize="24"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="didTapStartButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="fjm-cb-k73"/>
+                                    <action selector="didTapStartButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="2GW-ZM-48l"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watch sports live or highlights, read every news from your smartphone" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M64-wC-Cks">
@@ -71,7 +79,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="7Gq-2P-Ix2"/>
                     <connections>
-                        <outlet property="text" destination="vaO-2t-hi9" id="lmY-og-MhO"/>
+                        <outlet property="text" destination="vaO-2t-hi9" id="UMv-rl-86l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

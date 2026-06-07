@@ -21,7 +21,7 @@ extension SportType {
 
 protocol NetworkManagerProtocol {
     func fetchLeagues(sport: SportType, completion: @escaping (Result<[League], Error>) -> Void)
-    func fetchFixtures(sport: SportType, fromDate: String, toDate: String, completion: @escaping (Result<[Fixture], Error>) -> Void)
+
     func fetchFixtures(sport: SportType, leagueId: String, fromDate: String, toDate: String, completion: @escaping (Result<[Fixture], Error>) -> Void)
     func fetchTeam(sport: SportType, teamId: String, completion: @escaping (Result<[Team], Error>) -> Void)
     func fetchTeamsInLeague(sport: SportType, leagueId: String, completion: @escaping (Result<[Team], Error>) -> Void)
@@ -55,18 +55,6 @@ class NetworkManager: NetworkManagerProtocol {
     func fetchLeagues(sport: SportType, completion: @escaping (Result<[League], Error>) -> Void) {
         let parameters = ["met": "Leagues", "APIkey": APIConfig.apiKey]
         fetchRawData(url: sport.baseURL, parameters: parameters, responseType: LeagueResponse.self) { result in
-            switch result {
-            case .success(let response):
-                completion(.success(response.result ?? []))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-    
-    func fetchFixtures(sport: SportType, fromDate: String, toDate: String, completion: @escaping (Result<[Fixture], Error>) -> Void) {
-        let parameters = ["met": "Fixtures", "from": fromDate, "to": toDate, "APIkey": APIConfig.apiKey]
-        fetchRawData(url: sport.baseURL, parameters: parameters, responseType: FixtureResponse.self) { result in
             switch result {
             case .success(let response):
                 completion(.success(response.result ?? []))

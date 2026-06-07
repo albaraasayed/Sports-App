@@ -16,6 +16,7 @@
 		C534B2472FD46C87007659AB /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C534B2462FD46C7C007659AB /* Alerts.swift */; };
 		C53964EE2FC1F2F600956CD0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C53964ED2FC1F2F600956CD0 /* Alamofire */; };
 		C53964F42FC1F55800956CD0 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53964F32FC1F55800956CD0 /* HomeVC.swift */; };
+		C55FA7122FD5886A00FBFB2D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55FA7112FD5886A00FBFB2D /* Launch Screen.storyboard */; };
 		C560F8112FD3430E00366447 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C560F8102FD3430E00366447 /* UserDefaultsManager.swift */; };
 		C560F8132FD3508D00366447 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C560F8122FD3508D00366447 /* NetworkConnection.swift */; };
 		C560F8162FD3522900366447 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = C560F8152FD3522900366447 /* NVActivityIndicatorView */; };
@@ -60,7 +61,6 @@
 		C5DE9B032FCC66CB0094A77A /* TeamDetailsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5DE9B002FCC66CB0094A77A /* TeamDetailsVC.storyboard */; };
 		C5DE9B042FCC66CB0094A77A /* TeamDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DE9B012FCC66CB0094A77A /* TeamDetailsVC.swift */; };
 		C5DF0D7C2FC1C0410089B011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5DF0D712FC1C0410089B011 /* Assets.xcassets */; };
-		C5DF0D7E2FC1C0410089B011 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5DF0D742FC1C0410089B011 /* LaunchScreen.storyboard */; };
 		C5DF0D802FC1C0410089B011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF0D702FC1C0410089B011 /* AppDelegate.swift */; };
 		C5DF0D812FC1C0410089B011 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF0D772FC1C0410089B011 /* SceneDelegate.swift */; };
 		C5DF0D8A2FC1D1550089B011 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF0D892FC1D1500089B011 /* Colors.swift */; };
@@ -99,6 +99,7 @@
 		C534B2442FD4593C007659AB /* TennisPlayerDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TennisPlayerDetailsPresenter.swift; sourceTree = "<group>"; };
 		C534B2462FD46C7C007659AB /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		C53964F32FC1F55800956CD0 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		C55FA7112FD5886A00FBFB2D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C560F8102FD3430E00366447 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		C560F8122FD3508D00366447 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		C560F8192FD36ECE00366447 /* FavoriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
@@ -152,7 +153,6 @@
 		C5DF0D702FC1C0410089B011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5DF0D712FC1C0410089B011 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5DF0D722FC1C0410089B011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C5DF0D732FC1C0410089B011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5DF0D772FC1C0410089B011 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C5DF0D892FC1D1500089B011 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C5DF0D932FC1DC6B0089B011 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -424,7 +424,7 @@
 			children = (
 				C5DF0D702FC1C0410089B011 /* AppDelegate.swift */,
 				C5DF0D772FC1C0410089B011 /* SceneDelegate.swift */,
-				C5DF0D742FC1C0410089B011 /* LaunchScreen.storyboard */,
+				C55FA7112FD5886A00FBFB2D /* Launch Screen.storyboard */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -632,13 +632,13 @@
 				C5C8944D2FD4B404000400E8 /* TennisPlayerDetailsVC.storyboard in Resources */,
 				C5DF0D9F2FC1E1550089B011 /* Manrope-Regular.otf in Resources */,
 				C5DF0DA02FC1E1550089B011 /* Manrope-Thin.otf in Resources */,
+				C55FA7122FD5886A00FBFB2D /* Launch Screen.storyboard in Resources */,
 				C5DF0DA12FC1E1550089B011 /* Manrope-Light.otf in Resources */,
 				C5DF0DA22FC1E1550089B011 /* Manrope-SemiBold.otf in Resources */,
 				C566BE462FD4BAAB00791651 /* LeagueDetailsVC.storyboard in Resources */,
 				C5DF0DA32FC1E1550089B011 /* Manrope-Bold.otf in Resources */,
 				C5FF5F172FD4B9370037C90A /* HomeVC.storyboard in Resources */,
 				C5DF0D7C2FC1C0410089B011 /* Assets.xcassets in Resources */,
-				C5DF0D7E2FC1C0410089B011 /* LaunchScreen.storyboard in Resources */,
 				C5C894492FD4B3CE000400E8 /* Main.storyboard in Resources */,
 				C5C8DA9B2FCA6AA50041997B /* UpcomingCell.xib in Resources */,
 				C566BE4A2FD4BADD00791651 /* PlayerCell.xib in Resources */,
@@ -804,14 +804,6 @@
 			name = TournamentsCell.xib;
 			sourceTree = "<group>";
 		};
-		C5DF0D742FC1C0410089B011 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C5DF0D732FC1C0410089B011 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		C5FF5F162FD4B9370037C90A /* HomeVC.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -879,12 +871,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SportsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -910,12 +903,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SportsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

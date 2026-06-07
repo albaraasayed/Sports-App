@@ -43,9 +43,6 @@ class MockLeagueDetailsVC: LeagueDetailsVCProtocol {
 }
 
 
-import Foundation
-@testable import SportsApp
-
 class MockNetworkManager: NetworkManagerProtocol {
     
     var shouldReturnError: Bool
@@ -68,14 +65,6 @@ class MockNetworkManager: NetworkManagerProtocol {
             completion(.failure(ResponseError.fetchError))
         } else {
             completion(.success(mockLeagues))
-        }
-    }
-    
-    func fetchFixtures(sport: SportType, fromDate: String, toDate: String, completion: @escaping (Result<[Fixture], Error>) -> Void) {
-        if shouldReturnError {
-            completion(.failure(ResponseError.fetchError))
-        } else {
-            completion(.success(mockUpcomingFixtures))
         }
     }
     
@@ -122,6 +111,7 @@ class MockNetworkManager: NetworkManagerProtocol {
 
 
 class MockLeaguesView: LeaguesViewProtocol {
+    
     var isShowLoadingCalled = false
     var isHideLoadingCalled = false
     var displayedLeagues: [League]?

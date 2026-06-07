@@ -221,7 +221,11 @@ extension LeagueDetailsVC: UICollectionViewDataSource, UICollectionViewDelegate 
         case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.teamsCell, for: indexPath) as? TeamsCell else { return UICollectionViewCell() }
             
-            cell.teamNameLabel.text = teams[indexPath.row].teamName
+            if sportType == .tennis {
+                cell.teamNameLabel.text = tennisPlayers[indexPath.row].playerName
+            } else {
+                cell.teamNameLabel.text = teams[indexPath.row].teamName
+            }
             if let logoString = (sportType == .tennis ? tennisPlayers[indexPath.row].playerLogo : teams[indexPath.row].teamLogo),
                let url = URL(string: logoString) {
                 cell.imageView.sd_setImage(with: url, placeholderImage: placeholderImage)

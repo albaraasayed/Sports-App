@@ -44,25 +44,6 @@ final class NetworkManagerTests: XCTestCase {
         }
     }
     
-    func testMockFetchFixturesByDateSuccess() {
-        mockNetworkManager.shouldReturnError = false
-        mockNetworkManager.fetchFixtures(sport: .football, fromDate: "2024-01-01", toDate: "2024-12-31") { result in
-            switch result {
-            case .success(let fixtures): XCTAssertNotNil(fixtures)
-            case .failure(_): XCTFail("Expected success")
-            }
-        }
-    }
-    
-    func testMockFetchFixturesByDateFailure() {
-        mockNetworkManager.shouldReturnError = true
-        mockNetworkManager.fetchFixtures(sport: .football, fromDate: "2024-01-01", toDate: "2024-12-31") { result in
-            switch result {
-            case .success(_): XCTFail("Expected failure")
-            case .failure(let error): XCTAssertNotNil(error)
-            }
-        }
-    }
     
     func testMockFetchFixturesByLeagueSuccess() {
         mockNetworkManager.shouldReturnError = false
@@ -165,11 +146,7 @@ final class NetworkManagerTests: XCTestCase {
         }
     }
     
-    // ==========================================
-    // MARK: - REAL NETWORK TESTS (Coverage Boosters)
-    // ==========================================
     
-    // 1. Fetch Leagues (Real)
     func testRealFetchLeaguesSuccess() {
         let expectation = expectation(description: "API - Leagues")
         realNetworkManager.fetchLeagues(sport: .football) { result in
@@ -181,34 +158,6 @@ final class NetworkManagerTests: XCTestCase {
         waitForExpectations(timeout: 5)
     }
     
-    // 2. Fetch Fixtures by Date (Real)
-    func testRealFetchFixturesByDateSuccess() {
-        let expectation = expectation(description: "API - Fixtures By Date")
-        realNetworkManager.fetchFixtures(sport: .football, fromDate: "2024-01-01", toDate: "2024-01-31") { result in
-            switch result {
-            case .success(let fixtures): XCTAssertNotNil(fixtures); expectation.fulfill()
-            case .failure(let error): XCTFail(error.localizedDescription)
-            }
-        }
-        waitForExpectations(timeout: 5)
-    }
-    
-    func testRealFetchFixturesByDateFailure() {
-        let expectation = expectation(description: "API - Fixtures By Date Failure")
-        realNetworkManager.fetchFixtures(sport: .football, fromDate: "INVALID", toDate: "INVALID") { result in
-            switch result {
-            case .success(let fixtures):
-                XCTAssertTrue(fixtures.isEmpty, "Expected empty array for invalid dates")
-                expectation.fulfill()
-            case .failure(let error):
-                XCTAssertNotNil(error)
-                expectation.fulfill()
-            }
-        }
-        waitForExpectations(timeout: 5)
-    }
-    
-    // 3. Fetch Fixtures by League (Real)
     func testRealFetchFixturesByLeagueSuccess() {
         let expectation = expectation(description: "API - Fixtures By League")
         realNetworkManager.fetchFixtures(sport: .football, leagueId: "152", fromDate: "2024-01-01", toDate: "2024-12-31") { result in
@@ -223,7 +172,6 @@ final class NetworkManagerTests: XCTestCase {
     func testRealFetchFixturesByLeagueFailure() {
         let expectation = expectation(description: "API - Fixtures By League Failure")
         realNetworkManager.fetchFixtures(sport: .football, leagueId: "INVALID_ID", fromDate: "2024-01-01", toDate: "2024-12-31") { result in
-            // Accept either outcome so the test passes regardless of API quirks
             switch result {
             case .success(let fixtures):
                 XCTAssertNotNil(fixtures)
@@ -232,10 +180,9 @@ final class NetworkManagerTests: XCTestCase {
             }
             expectation.fulfill()
         }
-        waitForExpectations(timeout: 5)
+        waitForExpectations(timeout: 10)
     }
     
-    // 4. Fetch Team (Real)
     func testRealFetchTeamSuccess() {
         let expectation = expectation(description: "API - Team")
         realNetworkManager.fetchTeam(sport: .football, teamId: "96") { result in
@@ -261,8 +208,8 @@ final class NetworkManagerTests: XCTestCase {
         }
         waitForExpectations(timeout: 5)
     }
+
     
-    // 5. Fetch Teams In League (Real)
     func testRealFetchTeamsInLeagueSuccess() {
         let expectation = expectation(description: "API - Teams In League")
         realNetworkManager.fetchTeamsInLeague(sport: .football, leagueId: "152") { result in
@@ -285,10 +232,10 @@ final class NetworkManagerTests: XCTestCase {
                 }
                 expectation.fulfill()
             }
-            waitForExpectations(timeout: 5)
+            waitForExpectations(timeout: 10)
         }
     
-    // 6. Fetch Tennis Player (Real)
+
     func testRealFetchTennisPlayerSuccess() {
         let expectation = expectation(description: "API - Tennis Player")
         realNetworkManager.fetchTennisPlayer(playerId: "100") { result in
@@ -315,7 +262,7 @@ final class NetworkManagerTests: XCTestCase {
         waitForExpectations(timeout: 5)
     }
     
-    // 7. Fetch Tennis Players In League (Real)
+
     func testRealFetchTennisPlayersInLeagueSuccess() {
         let expectation = expectation(description: "API - Tennis Players In League")
         realNetworkManager.fetchTennisPlayersInLeague(leagueId: "2000") { result in
