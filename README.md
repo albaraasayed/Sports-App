@@ -132,13 +132,18 @@ We take reliability seriously. The app includes a comprehensive test suite targe
 ## 📱 Screenshots
 
 <p align="center">
-  <img src="https://via.placeholder.com/200x400.png?text=Home+Tab" alt="Home Screen" width="200"/>
+   <img src="https://github.com/user-attachments/assets/edbb269d-7939-4f5a-ad71-a2a1d1d0d93b" alt="Home Screen" width="200"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="https://via.placeholder.com/200x400.png?text=Leagues" alt="Leagues Screen" width="200"/>
+  <img width="200"  alt="image" src="https://github.com/user-attachments/assets/570e3352-1833-466b-8343-55e7ad9454cd" />
   &nbsp;&nbsp;&nbsp;
-  <img src="https://via.placeholder.com/200x400.png?text=League+Details" alt="League Details" width="200"/>
-  &nbsp;&nbsp;&nbsp;
-  <img src="https://via.placeholder.com/200x400.png?text=Favorites" alt="Favorites Screen" width="200"/>
+  <img width="200" alt="image" src="https://github.com/user-attachments/assets/a0f09438-c183-46a7-bac8-554b467cfad5" />
+   &nbsp;&nbsp;&nbsp;
+   <img width="200" alt="image" src="https://github.com/user-attachments/assets/d84d0319-2de9-43b9-a301-eff8bdddb4dc" />
+   &nbsp;&nbsp;&nbsp;
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/33af9f66-d87f-4b3a-a169-3c270a21a598" />
+   &nbsp;&nbsp;&nbsp;
+   <img width="200"  alt="image" src="https://github.com/user-attachments/assets/f2c4acb4-e9cf-4c86-8242-be8ea0a9382c" />
+
 </p>
 
 *(Note: Replace placeholder images with actual app screenshots before publishing)*
