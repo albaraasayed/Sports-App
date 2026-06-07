@@ -13,6 +13,7 @@ protocol UserDefaultsManagerProtocol {
     func changeLanguage(to language: String)
     func changeTheme(to theme: String)
     func getTheme() -> String?
+    func getLanguage() -> String?
 }
 
 class UserDefaultsManager: UserDefaultsManagerProtocol {
@@ -46,4 +47,9 @@ class UserDefaultsManager: UserDefaultsManagerProtocol {
     func getTheme() -> String? {
         return userDefaults.string(forKey: themeKey)
     }
+    
+    func getLanguage() -> String? {
+        return userDefaults.string(forKey: languageKey)
+    }
+    
 }

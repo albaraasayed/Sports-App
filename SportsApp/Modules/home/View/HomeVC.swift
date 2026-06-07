@@ -31,15 +31,27 @@ class HomeVC: UIViewController {
     
     
     @IBAction func didTapLocalizationButton(_ sender: Any) {
-        if isEnglish {
-            isEnglish.toggle()
-            languageBarButton.title = "عربي"
-        }
-        else{
-            isEnglish.toggle()
-            languageBarButton.title = "EN"
-        }
+        let currentLanguage = UserDefaultsManager.shared.getLanguage() ?? "en"
+        let newLanguage = (currentLanguage == "en") ? "ar" : "en"
+        
+        UserDefaultsManager.shared.changeLanguage(to: newLanguage)
+        UserDefaults.standard.set([newLanguage], forKey: "AppleLanguages")
+        UserDefaults.standard.synchronize()
+        
+        let message = (newLanguage == "ar") ? "سيتم إغلاق التطبيق الآن لتطبيق اللغة الجديدة. يرجى فتحه مرة أخرى." : "The app will now close to apply the new language. Please reopen it."
+        let title = (newLanguage == "ar") ? "تغيير اللغة" : "Change Language"
+        
+        AlertManager.showLanguageChangeAlert(on: self, title: title, message: message)
     }
+    
+    @IBAction func didTapSystemTheme(_ sender: Any) {
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                windowScene.windows.forEach { window in
+                    window.overrideUserInterfaceStyle = .unspecified
+                }
+            }
+            UserDefaultsManager.shared.changeTheme(to: "system")
+        }
     
     @IBAction func didTapDarkTheme(_ sender: Any) {
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {

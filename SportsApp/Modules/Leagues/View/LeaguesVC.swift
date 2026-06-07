@@ -158,7 +158,17 @@ extension LeaguesVC: LeagueCellDelegate {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         let selectedLeague = leaguesArray[indexPath.row]
         
-        leaguePresenter?.toggleFavorite(league: selectedLeague, isNowFavorite: isFavoriteNow)
+        if !isFavoriteNow {
+            AlertManager.showDeleteConfirmationAlert(on: self, title: String(localized: "Remove Favorite"), message: String(localized: "Are you sure you want to remove this league from your favorites?")) { [weak self] in
+                self?.leaguePresenter?.toggleFavorite(league: selectedLeague, isNowFavorite: false)
+                cell.configureBasicInfo(name: selectedLeague.leagueName ?? "", subtitle: cell.sportNameLabel.text ?? "", isFavorite: false)
+            } cancelHandler: {
+                
+            }
+        } else {
+            leaguePresenter?.toggleFavorite(league: selectedLeague, isNowFavorite: true)
+            cell.configureBasicInfo(name: selectedLeague.leagueName ?? "", subtitle: cell.sportNameLabel.text ?? "", isFavorite: true)
+        }
     }
 }
 

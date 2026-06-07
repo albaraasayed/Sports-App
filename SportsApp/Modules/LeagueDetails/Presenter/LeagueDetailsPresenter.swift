@@ -81,6 +81,7 @@ class LeagueDetailsPresenter: LeagueDetailsPresenterProtocol {
         view?.showLoading()
         
         let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "yyyy-MM-dd"
         
         let today = Date()

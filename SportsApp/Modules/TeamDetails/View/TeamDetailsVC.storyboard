@@ -26,8 +26,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="426"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Madrid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ss6-s4-3wi">
-                                        <rect key="frame" x="16" y="264" width="361" height="146"/>
-                                        <fontDescription key="fontDescription" name="BebasNeueBold" family="Bebas Neue" pointSize="120"/>
+                                        <rect key="frame" x="16" y="264" width="361" height="100"/>
+                                        <fontDescription key="fontDescription" name="BebasNeueBold" family="Bebas Neue" pointSize="100"/>
                                         <color key="textColor" red="1" green="0.3803921569" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -165,7 +165,6 @@
                                     <constraint firstItem="Ss6-s4-3wi" firstAttribute="leading" secondItem="LBD-LV-z6c" secondAttribute="leading" constant="16" id="AsO-Aq-yAC"/>
                                     <constraint firstItem="7Bw-io-79G" firstAttribute="leading" secondItem="LBD-LV-z6c" secondAttribute="leading" constant="60" id="N27-J1-Z50"/>
                                     <constraint firstItem="Ss6-s4-3wi" firstAttribute="top" secondItem="7Bw-io-79G" secondAttribute="bottom" constant="8" id="RY8-Ur-AGW"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ss6-s4-3wi" secondAttribute="bottom" constant="16" id="ihz-fg-R2J"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gw5-85-80y">

@@ -188,7 +188,7 @@ extension TeamDetailsVC: UICollectionViewDataSource {
         cell.playerNameLabel.text = player.playerName ?? "Player Name"
         cell.playerNumber.text = player.playerNumber ?? "-"
         cell.playerAge.text = player.playerAge ?? "-"
-        cell.playerCountry.text = player.playerCountry ?? "Player Country"
+        cell.playerCountry.text = player.playerCountry ?? "Country"
         
         cell.matchPlayed.text = player.playerMatchPlayed ?? "0"
         cell.totalGoals.text = player.playerGoals ?? "0"

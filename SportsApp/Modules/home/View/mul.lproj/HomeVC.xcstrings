@@ -44,7 +44,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "النمط الصباحي"
+            "value" : "النمط المضيء"
           }
         },
         "en" : {
@@ -87,6 +87,24 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Follow your favorite league"
+          }
+        }
+      }
+    },
+    "njf-BK-sdn.title" : {
+      "comment" : "Class = \"UIBarButtonItem\"; title = \"System Theme\"; ObjectID = \"njf-BK-sdn\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "النمط الافتراضي للنظام"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "System Theme"
           }
         }
       }

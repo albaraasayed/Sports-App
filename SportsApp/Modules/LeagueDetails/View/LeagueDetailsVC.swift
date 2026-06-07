@@ -23,7 +23,13 @@ class LeagueDetailsVC: UIViewController {
     }()
     
     @objc private func didTapFavButton() {
-        presenter?.toggleFavorite()
+        if presenter?.isFavorite == true {
+            AlertManager.showDeleteConfirmationAlert(on: self, title: String(localized: "Remove Favorite"), message: String(localized: "Are you sure you want to remove this league from your favorites?")) { [weak self] in
+                self?.presenter?.toggleFavorite()
+            }
+        } else {
+            presenter?.toggleFavorite()
+        }
     }
     
     var sportType: SportType?

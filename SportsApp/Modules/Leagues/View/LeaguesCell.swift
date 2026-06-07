@@ -30,9 +30,7 @@ class LeaguesCell: UITableViewCell {
     }
     
     @IBAction func didTapFavButton(_ sender: Any) {
-        isFavoriteState.toggle()
-        updateStarIcon()
-        delegate?.didTapFavoriteButton(on: self, isFavoriteNow: isFavoriteState)
+        delegate?.didTapFavoriteButton(on: self, isFavoriteNow: !isFavoriteState)
     }
     
     func configureBasicInfo(name: String, subtitle: String, isFavorite: Bool) {

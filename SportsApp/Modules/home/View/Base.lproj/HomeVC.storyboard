@@ -67,6 +67,12 @@
                         <centerItemGroups>
                             <barButtonItemGroup customizationDisposition="fixed" id="UTf-iY-LjW">
                                 <barButtonItems>
+                                    <barButtonItem title="System Theme" id="njf-BK-sdn" userLabel="Dark Theme">
+                                        <color key="tintColor" name="Primary"/>
+                                        <connections>
+                                            <action selector="didTapSystemTheme:" destination="Y6W-OH-hqX" id="YBc-sf-h0G"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Dark Theme" id="tis-fK-qQe" userLabel="Dark Theme">
                                         <color key="tintColor" name="Primary"/>
                                         <connections>

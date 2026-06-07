@@ -113,8 +113,12 @@ extension FavoriteVC: LeagueCellDelegate {
         let favLeague = favorites[indexPath.row]
         
         if !isFavoriteNow {
-            if let id = favLeague.leagueId {
-                presenter.deleteFavorite(id: id)
+            AlertManager.showDeleteConfirmationAlert(on: self, title: String(localized: "Remove Favorite"), message: String(localized: "Are you sure you want to remove this league from your favorites?")) { [weak self] in
+                if let id = favLeague.leagueId {
+                    self?.presenter.deleteFavorite(id: id)
+                }
+            } cancelHandler: {
+                
             }
         }
     }
