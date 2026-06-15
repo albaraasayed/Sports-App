@@ -65,7 +65,6 @@ Follow these steps to run the project locally on your machine:
 
 6. **Running Tests:**
    Press `Cmd + U` to execute the comprehensive test suite, which utilizes mocked network layers to validate the Presenter logic without requiring actual internet connectivity.
-```
 
 ## Contributors
 - Mahmoud Tarek - Contributor
