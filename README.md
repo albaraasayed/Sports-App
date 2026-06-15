@@ -1,12 +1,12 @@
 # SportsApp
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/edbb269d-7939-4f5a-ad71-a2a1d1d0d93b" width="150"/>
-  <img src="https://github.com/user-attachments/assets/570e3352-1833-466b-8343-55e7ad9454cd" width="150"/>
-  <img src="https://github.com/user-attachments/assets/a0f09438-c183-46a7-bac8-554b467cfad5" width="150"/>
-  <img src="https://github.com/user-attachments/assets/d84d0319-2de9-43b9-a301-eff8bdddb4dc" width="150"/>
-  <img src="https://github.com/user-attachments/assets/33af9f66-d87f-4b3a-a169-3c270a21a598" width="150"/>
-  <img src="https://github.com/user-attachments/assets/f2c4acb4-e9cf-4c86-8242-be8ea0a9382c" width="150"/>
+  <img src="https://github.com/user-attachments/assets/edbb269d-7939-4f5a-ad71-a2a1d1d0d93b" width="100"/>
+  <img src="https://github.com/user-attachments/assets/570e3352-1833-466b-8343-55e7ad9454cd" width="100"/>
+  <img src="https://github.com/user-attachments/assets/a0f09438-c183-46a7-bac8-554b467cfad5" width="100"/>
+  <img src="https://github.com/user-attachments/assets/d84d0319-2de9-43b9-a301-eff8bdddb4dc" width="100"/>
+  <img src="https://github.com/user-attachments/assets/33af9f66-d87f-4b3a-a169-3c270a21a598" width="100"/>
+  <img src="https://github.com/user-attachments/assets/f2c4acb4-e9cf-4c86-8242-be8ea0a9382c" width="100"/>
 </div>
 
 ## Overview
