@@ -13,21 +13,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-            guard let windowScene = (scene as? UIWindowScene) else { return }
-            
-            let currentTheme = UserDefaultsManager.shared.getTheme()
-            
-            if currentTheme == "dark" {
-                windowScene.windows.forEach { $0.overrideUserInterfaceStyle = .dark }
-            } else if currentTheme == "light" {
-                windowScene.windows.forEach { $0.overrideUserInterfaceStyle = .light }
-            } else {
-                windowScene.windows.forEach { $0.overrideUserInterfaceStyle = .unspecified }
-            }
-            
-            let currentLanguage = UserDefaultsManager.shared.getLanguage() ?? "en"
-            UIView.appearance().semanticContentAttribute = (currentLanguage == "ar") ? .forceRightToLeft : .forceLeftToRight
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        // Theme Code
+        let currentTheme = UserDefaultsManager.shared.getTheme()
+        
+        if currentTheme == "dark" {
+            windowScene.windows.forEach { $0.overrideUserInterfaceStyle = .dark }
+        } else if currentTheme == "light" {
+            windowScene.windows.forEach { $0.overrideUserInterfaceStyle = .light }
+        } else {
+            windowScene.windows.forEach { $0.overrideUserInterfaceStyle = .unspecified }
         }
+        
+        // Language Code
+        let currentLanguage = UserDefaultsManager.shared.getLanguage() ?? "en"
+        UIView.appearance().semanticContentAttribute = (currentLanguage == "ar") ? .forceRightToLeft : .forceLeftToRight
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
